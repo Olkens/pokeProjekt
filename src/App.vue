@@ -1,36 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HeaderTitle name="Michał"/>
-  <SectionsFirst text="u lala"></SectionsFirst>
+  <div>
+    <div v-for="pokemon in poksyDetails" :key="pokemon.id">
+      <div>{{ pokemon.id }} {{ pokemon.name }}, wysokość: {{ pokemon.height }}</div>
+    </div>
+  </div>
 </template>
 
 <script>
 import axios from 'axios';
 
-import HeaderTitle from './components/Header/HeaderTitle'
-import SectionsFirst from "./components/Sections/SectionsFirst";
-
 
 export default {
   name: 'App',
-  components: {
-    HeaderTitle,
-    SectionsFirst,
-  },
+  components: {},
   data() {
     return {
-      url: 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=151'
+      url: 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=151',
+      poksy: [],
+      poksyDetails: [],
     }
   },
   mounted() {
     axios.get(this.url).then((response) => {
       const dataArr = response.data.results;
-      for(let i = 1; i < dataArr.length; i++) {
-        console.log(dataArr[i].name);
+      for (let i = 0; i < dataArr.length; i++) {
+        console.log(dataArr[i].url);
+        this.poksy.push(dataArr[i])
+        axios.get(dataArr[i].url).then((res) => {
+          this.poksyDetails.push(res.data)
+        })
       }
-
-    }).catch(() => {
-
+    }).catch((err) => {
+      console.log(err)
     }).finally(() => {
 
     })
