@@ -2,13 +2,13 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <HeaderTitle name="Michał"/>
   <SectionsFirst text="u lala"></SectionsFirst>
-  <SectionTwo text="u lala2"></SectionTwo>
 </template>
 
 <script>
+import axios from 'axios';
+
 import HeaderTitle from './components/Header/HeaderTitle'
 import SectionsFirst from "./components/Sections/SectionsFirst";
-import SectionTwo from "@/components/Sections/SectionTwo";
 
 
 export default {
@@ -16,8 +16,25 @@ export default {
   components: {
     HeaderTitle,
     SectionsFirst,
-    SectionTwo,
-  }
+  },
+  data() {
+    return {
+      url: 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=151'
+    }
+  },
+  mounted() {
+    axios.get(this.url).then((response) => {
+      const dataArr = response.data.results;
+      for(let i = 1; i < dataArr.length; i++) {
+        console.log(dataArr[i].name);
+      }
+
+    }).catch(() => {
+
+    }).finally(() => {
+
+    })
+  },
 }
 </script>
 
