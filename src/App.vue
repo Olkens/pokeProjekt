@@ -1,8 +1,10 @@
 <template>
   <div>
-    <div v-for="pokemon in poksyDetails" :key="pokemon.id">
-      <div>{{ pokemon.id }} {{ pokemon.name }}, wysokość: {{ pokemon.height }}</div>
-    </div>
+    <router-link to="/pokemonPages/pokemonSearch"/>
+    <router-view></router-view>
+<!--    <div v-for="pokemon in poksyDetails" :key="pokemon.id">-->
+<!--      <div>{{ pokemon.id }} {{ pokemon.name }}, wysokość: {{ pokemon.height }}</div>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -24,7 +26,7 @@ export default {
     axios.get(this.url).then((response) => {
       const dataArr = response.data.results;
       for (let i = 0; i < dataArr.length; i++) {
-        console.log(dataArr[i].url);
+        // console.log(dataArr[i].url);
         this.poksy.push(dataArr[i])
         axios.get(dataArr[i].url).then((res) => {
           this.poksyDetails.push(res.data)
@@ -40,12 +42,12 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+/*#app {*/
+/*  font-family: Avenir, Helvetica, Arial, sans-serif;*/
+/*  -webkit-font-smoothing: antialiased;*/
+/*  -moz-osx-font-smoothing: grayscale;*/
+/*  text-align: center;*/
+/*  color: #2c3e50;*/
+/*  margin-top: 60px;*/
+/*}*/
 </style>
