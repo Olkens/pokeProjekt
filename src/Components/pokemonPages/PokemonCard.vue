@@ -2,7 +2,7 @@
   <div class="display-pokemons">
     <div class="card">
       <img :src="pokemon.sprites.front_default" alt="" />
-      <p>{{ pokemon.name }} {{pokemon.id}}</p>
+      <p class="pokemon-name">{{ pokemon.name }}</p>
     </div>
   </div>
 </template>
@@ -21,9 +21,15 @@ export default {
 <style>
 .card {
   display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  align-items: center;
+  gap: 10px;
 }
-.display-pokemons {
-  display: flex;
-  flex-direction: row;
+.pokemon-name{
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 0;
 }
 </style>

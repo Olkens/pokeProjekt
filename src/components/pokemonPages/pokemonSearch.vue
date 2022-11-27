@@ -3,7 +3,12 @@
     <div>
       <router-link to="/">Home</router-link>
     </div>
-    <input type="text" v-model="pokemonSearchInput" />
+    <input
+      type="text"
+      v-model="pokemonSearchInput"
+      class="search-bar"
+      placeholder="Wyszukaj pokemona"
+    />
     {{ pokemonSearchInput }}
     <div v-if="pokemonsDetails.length < 150" class="flex-center">
       <div class="lds-roller">
@@ -20,7 +25,11 @@
     <div v-else>
       <div class="display-pokemons">
         <div v-for="pokemon in filertPokemons" :key="pokemon.id">
-          <PokemonCard :pokemon="pokemon"></PokemonCard>
+          <router-link class="router-display"
+            :to="{ path: '/pokemonPages/PokemonDetails/' + pokemon.id }"
+          >
+            <PokemonCard :pokemon="pokemon"></PokemonCard
+          ></router-link>
         </div>
       </div>
     </div>
@@ -53,21 +62,17 @@ export default {
       })
       .then(() => {
         this.getPokemons();
-      })
-      .finally(() => {
-        console.log(this.pokemonsDetails);
       });
   },
 
   methods: {
-    async getPokemons(){
+    async getPokemons() {
       for (let i = 0; i < this.pokemons.length; i++) {
-          await axios.get(this.pokemons[i].url).then((res) => {
-            this.pokemonsDetails.push(res.data);
-            console.log(res.data.id)
-          });
-        }
-    }
+        await axios.get(this.pokemons[i].url).then((res) => {
+          this.pokemonsDetails.push(res.data);
+        });
+      }
+    },
   },
 
   computed: {
@@ -88,14 +93,31 @@ export default {
   height: 800px;
 }
 .pokemonSearch {
-  max-width: 1440px;
+  max-width: 1200px;
   margin: 0 auto;
 }
+
+/* KARTY POKEMONÓW */
 .display-pokemons {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 25px;
 }
+
+.search-bar {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid black;
+  height: 25px;
+}
+
+.router-display{
+  text-decoration: none;
+  color: black;
+}
+
+/* SPINNER */
 .lds-roller {
   display: inline-block;
   position: relative;
