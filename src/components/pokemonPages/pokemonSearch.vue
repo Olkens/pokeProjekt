@@ -10,7 +10,7 @@
       placeholder="Wyszukaj pokemona"
     />
     {{ pokemonSearchInput }}
-    <div v-if="pokemonsDetails.length < 150" class="flex-center">
+    <div v-if="pokemonsDetails.length < pokemons.length" class="flex-center">
       <div class="lds-roller">
         <div></div>
         <div></div>
@@ -25,7 +25,8 @@
     <div v-else>
       <div class="display-pokemons">
         <div v-for="pokemon in filertPokemons" :key="pokemon.id">
-          <router-link class="router-display"
+          <router-link
+            class="router-display"
             :to="{ path: '/pokemonPages/PokemonDetails/' + pokemon.id }"
           >
             <PokemonCard :pokemon="pokemon"></PokemonCard
@@ -53,7 +54,7 @@ export default {
       pokemonsDetails: [],
     };
   },
-  beforeMount() {
+  created() {
     axios
       .get(this.url)
       .then((res) => {
@@ -66,17 +67,21 @@ export default {
   },
 
   methods: {
-    async getPokemons() {
+    getPokemons() {
       for (let i = 0; i < this.pokemons.length; i++) {
-        await axios.get(this.pokemons[i].url).then((res) => {
+        axios.get(this.pokemons[i].url).then((res) => {
           this.pokemonsDetails.push(res.data);
         });
       }
     },
+    sortPokemons(){
+      this.pokemonsDetails.sort((a, b) => a.id > b.id ? 1 : -1)
+    }
   },
 
   computed: {
     filertPokemons() {
+      this.sortPokemons()
       return this.pokemonsDetails.filter((p) =>
         p.name.includes(this.pokemonSearchInput)
       );
@@ -112,7 +117,7 @@ export default {
   height: 25px;
 }
 
-.router-display{
+.router-display {
   text-decoration: none;
   color: black;
 }

@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>
+      <router-link to="/"> Home </router-link>
+    </div>
     {{pokemonDetails.name}}
   </div>
 </template>

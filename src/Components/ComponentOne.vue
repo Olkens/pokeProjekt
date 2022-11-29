@@ -2,7 +2,7 @@
     <div>
       <div class="main">
         <div class="logoContainer">
-            <img class="logo" src="logopok.png">
+            <img class="logo" src="../assets/logopok.png">
         </div>
         <div class="buttons">
             <div>
@@ -18,7 +18,7 @@
         <diV>
             <form class="formborder">
                 <input class="search" type="text" placeholder="Search Pokemon">
-                <button class="spot" type="submit"><img class="lupka" src="lupka.png"></button>
+                <button class="spot" type="submit"><img class="lupka" src="../assets/lupka.png"></button>
             </form>
         </diV>
       </div>
