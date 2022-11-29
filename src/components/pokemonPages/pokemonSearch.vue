@@ -1,7 +1,7 @@
 <template>
   <div class="pokemonSearch">
     <div>
-      <router-link to="/">Home</router-link>
+      <router-link to="/">Start</router-link>
     </div>
     <input
       type="text"
