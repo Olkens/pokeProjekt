@@ -1,15 +1,16 @@
 <template>
   <div>
-    <router-link to="/pokemonPages/PokemonSearch">Wyszukiwarka</router-link>
+    <page-header></page-header>
     <ComponentOne/>
   </div>
 </template>
 
 <script>
 import ComponentOne from './ComponentOne.vue';
+import PageHeader from './PageHeader.vue'
 export default {
     name: "HomePage",
-    components: { ComponentOne }
+    components: { ComponentOne, PageHeader }
 }
 </script>
 

@@ -1,8 +1,6 @@
 <template>
   <div class="pokemonSearch">
-    <div>
-      <router-link to="/">Start</router-link>
-    </div>
+    <page-header></page-header>
     <input
       type="text"
       v-model="pokemonSearchInput"
@@ -39,10 +37,12 @@
 
 <script>
 import PokemonCard from "./PokemonCard.vue";
+import PageHeader from "../PageHeader.vue";
 import axios from "axios";
 export default {
   components: {
     PokemonCard,
+    PageHeader,
   },
   name: "PokemonSearch",
   data() {
@@ -72,13 +72,13 @@ export default {
         });
       }
     },
-    sortPokemons(){
-      this.pokemonsDetails.sort((a, b) => a.id > b.id ? 1 : -1)
-    }
+    sortPokemons() {
+      this.pokemonsDetails.sort((a, b) => (a.id > b.id ? 1 : -1));
+    },
   },
   computed: {
     filertPokemons() {
-      this.sortPokemons()
+      this.sortPokemons();
       return this.pokemonsDetails.filter((p) =>
         p.name.includes(this.pokemonSearchInput)
       );
@@ -106,10 +106,19 @@ export default {
   gap: 25px;
 }
 .search-bar {
+  max-width: 877px;
   width: 100%;
+  height: 64px;
+  padding: 10px 26px;
   border-radius: 5px;
   border: 1px solid black;
   height: 25px;
+  background: #ffffff;
+  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 172, 96, 0.6),
+    inset 5px 5px 10px rgba(255, 172, 96, 0.5), inset -5px -5px 10px #ffffff;
+  border-radius: 40px;
+  margin-bottom: 25px;
 }
 .router-display {
   text-decoration: none;
