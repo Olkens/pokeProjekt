@@ -35,7 +35,7 @@ export default {
     name: 'ComponentOne',
 };
 </script>
-<style>
+<style scoped>
 body {
     background-color: #F5F5F5;
     width: auto;
