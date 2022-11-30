@@ -44,7 +44,7 @@ export default {
   components: {
     PokemonCard,
   },
-  name: "pokemonSearch",
+  name: "PokemonSearch",
   data() {
     return {
       url: "https://pokeapi.co/api/v2/pokemon?offset=0&limit=151",
