@@ -96,7 +96,10 @@ export default {
 }
 .pokemonSearch {
   max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 /* KARTY POKEMONÓW */
 .display-pokemons {

@@ -34,5 +34,7 @@ body {
  background: #FFF9EF;
  margin: 0;
  padding: 0;
+ display:flex;
+ justify-content: center;
 }
 </style>
