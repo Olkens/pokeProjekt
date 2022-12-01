@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="main">
       <router-link to="/"> Home </router-link>
     </div>
     {{pokemonDetails.name}}
@@ -26,5 +26,5 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 </style>
