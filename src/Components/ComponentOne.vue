@@ -1,21 +1,7 @@
 <template>
     <div>
         <div class="main">
-            <div class="logoContainer">
-                <img class="logo" src="../assets/logopok.png">
-            </div>
-            <div class="buttons">
-                <div>
-                    <button class="home">Home</button>
-                </div>
-                <div>
-                    <button class="list">Pokemon List</button>
-                </div>
-                <div>
-                    <button class="about">About</button>
-                </div>
-            </div>
-            <diV>
+            <div>
                 <form class="formborder">
                     <input class="search" type="text" placeholder="Search Pokemon">
                     <button class="spot" type="submit"><img class="lupka" src="../assets/lupka.png"></button>
@@ -23,11 +9,7 @@
             </diV>
         </div>
     </div>
-    <div class="footerContainer">
-        <footer>
-            <h6 class="group">InIn4_FD</h6>
-        </footer>
-    </div>
+    
 </template>
 
 <script>
