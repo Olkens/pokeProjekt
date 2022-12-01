@@ -50,7 +50,7 @@
   <div class="compare">Porównaj</div>
   <div class="button-left"><div class="arr left"><div></div></div></div>
   <div class="button-right"><div class="arr right"><div></div></div></div>
-</div>
+
 </template>
 
 <script>
