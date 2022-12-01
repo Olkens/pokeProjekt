@@ -1,6 +1,5 @@
 <template>
   <div class="pokemonSearch">
-    <page-header></page-header>
     <input
       type="text"
       v-model="pokemonSearchInput"
@@ -37,12 +36,10 @@
 
 <script>
 import PokemonCard from "./PokemonCard.vue";
-import PageHeader from "../PageHeader.vue";
 import axios from "axios";
 export default {
   components: {
     PokemonCard,
-    PageHeader,
   },
   name: "PokemonSearch",
   data() {

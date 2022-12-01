@@ -1,17 +1,22 @@
 <template>
   <div class="main-container">
+    <div>
+      <page-header></page-header>
+    </div>
     <router-link to="/pokemonPages/pokemonSearch"/>
     <router-view class="main-height"></router-view>
-<!--    <div v-for="pokemon in poksyDetails" :key="pokemon.id">-->
-<!--      <div>{{ pokemon.id }} {{ pokemon.name }}, wysokość: {{ pokemon.height }}</div>-->
-<!--    </div>-->
+  <div>
+    <footer-f></footer-f>
+  </div>
   </div>
 </template>
 
 <script>
+import FooterF from './Components/FooterF.vue';
+import PageHeader from './Components/PageHeader.vue';
 export default {
   name: 'App',
-  components: {},
+  components: {FooterF, PageHeader},
   data() {
     return {
     }

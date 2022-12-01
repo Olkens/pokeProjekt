@@ -1,16 +1,13 @@
 <template>
   <div>
-    <PageHeader></PageHeader>
-
     {{ pokemonDetails.name }}
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import PageHeader from "../PageHeader.vue";
 export default {
-  components: {PageHeader},
+  components: {},
   name: "PokemonDetails",
   data() {
     return {

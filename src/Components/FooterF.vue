@@ -19,7 +19,6 @@ body {
 .footer-container {
     display: flex;
     align-items: flex-end;
-    /* min-height: 100vh; */
 }
 
 .footer {
