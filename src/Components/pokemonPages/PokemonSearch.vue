@@ -100,6 +100,7 @@ export default {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
 }
 /* KARTY POKEMONÓW */
 .display-pokemons {

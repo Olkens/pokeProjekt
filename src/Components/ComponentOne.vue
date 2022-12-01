@@ -2,10 +2,6 @@
     <div>
         <div class="main">
             <div>
-                <form class="formborder">
-                    <input class="search" type="text" placeholder="Search Pokemon">
-                    <button class="spot" type="submit"><img class="lupka" src="../assets/lupka.png"></button>
-                </form>
             </diV>
         </div>
     </div>

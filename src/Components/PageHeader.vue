@@ -30,7 +30,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .logo {
   max-width: 400px;
   max-height: 144px;

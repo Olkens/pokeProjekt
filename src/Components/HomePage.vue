@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-container">
     <page-header></page-header>
     <ComponentOne/>
     <FooterF/>
@@ -17,4 +17,7 @@ export default {
 </script>
 
 <style scoped>
+.main-container {
+    min-height: 66vh;
+}
 </style>

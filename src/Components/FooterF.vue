@@ -19,9 +19,7 @@ body {
 .footer-container {
     display: flex;
     align-items: flex-end;
-    min-height: 100vh;
-    
-    
+    /* min-height: 100vh; */
 }
 
 .footer {
@@ -30,6 +28,5 @@ body {
     box-sizing: border-box;
     background: #FFCC03;
     border-top: 4px solid #0007AA;
-    
 }
 </style>

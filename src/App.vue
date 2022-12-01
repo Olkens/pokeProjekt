@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="main-container">
     <router-link to="/pokemonPages/pokemonSearch"/>
-    <router-view></router-view>
+    <router-view class="main-height"></router-view>
 <!--    <div v-for="pokemon in poksyDetails" :key="pokemon.id">-->
 <!--      <div>{{ pokemon.id }} {{ pokemon.name }}, wysokość: {{ pokemon.height }}</div>-->
 <!--    </div>-->
@@ -24,6 +24,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 #app {
  font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -34,7 +35,11 @@ body {
  background: #FFF9EF;
  margin: 0;
  padding: 0;
- display:flex;
- justify-content: center;
 }
+main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 </style>
