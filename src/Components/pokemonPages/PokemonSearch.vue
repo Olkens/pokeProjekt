@@ -1,8 +1,5 @@
 <template>
   <div class="pokemonSearch">
-    <div>
-      <router-link to="/">Start</router-link>
-    </div>
     <input
       type="text"
       v-model="pokemonSearchInput"
@@ -72,13 +69,13 @@ export default {
         });
       }
     },
-    sortPokemons(){
-      this.pokemonsDetails.sort((a, b) => a.id > b.id ? 1 : -1)
-    }
+    sortPokemons() {
+      this.pokemonsDetails.sort((a, b) => (a.id > b.id ? 1 : -1));
+    },
   },
   computed: {
     filertPokemons() {
-      this.sortPokemons()
+      this.sortPokemons();
       return this.pokemonsDetails.filter((p) =>
         p.name.includes(this.pokemonSearchInput)
       );
@@ -96,6 +93,10 @@ export default {
 }
 .pokemonSearch {
   max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
 }
 /* KARTY POKEMONÓW */
@@ -106,10 +107,19 @@ export default {
   gap: 25px;
 }
 .search-bar {
+  max-width: 877px;
   width: 100%;
+  height: 64px;
+  padding: 10px 26px;
   border-radius: 5px;
   border: 1px solid black;
   height: 25px;
+  background: #ffffff;
+  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 172, 96, 0.6),
+    inset 5px 5px 10px rgba(255, 172, 96, 0.5), inset -5px -5px 10px #ffffff;
+  border-radius: 40px;
+  margin-bottom: 25px;
 }
 .router-display {
   text-decoration: none;
