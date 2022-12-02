@@ -22,7 +22,6 @@ body {
 .footer-container {
     display: flex;
     align-items: flex-end;
-
 }
 
 .footer {
@@ -53,6 +52,7 @@ body {
 @media only screen and (max-width: 375px) {
     .footer {
         height: 70px;
+        
     }
     .groupName {
         font-weight: 400;
