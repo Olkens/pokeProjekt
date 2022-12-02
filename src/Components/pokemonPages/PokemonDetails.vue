@@ -45,12 +45,18 @@
         </div>
       </div>
     </div>
-    <div class="compare"><p>Compare with :</p><div class="search"><br><br></div></div>
+    <div class="compare">
+      <p>Compare with :</p>
+      <div class="search"><br /><br /></div>
+    </div>
   </div>
   <div class="compare">Porównaj</div>
-  <div class="button-left"><div class="arr left"><div></div></div></div>
-  <div class="button-right"><div class="arr right"><div></div></div></div>
-
+  <div class="button-left">
+    <div class="arr left"><div></div></div>
+  </div>
+  <div class="button-right">
+    <div class="arr right"><div></div></div>
+  </div>
 </template>
 
 <script>
@@ -84,7 +90,8 @@ export default {
   width: min-content;
   padding: 3px;
 }
-.box,.detail_box{
+.box,
+.detail_box {
   background: #fff9ef;
 }
 
@@ -144,10 +151,10 @@ export default {
   background: #ffcc03;
   border-radius: 32px 32px 0 0;
 }
-.search{
+.search {
   background: #fff9ef;
   box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
   border-radius: 32px;
   width: 79%;
-  }
+}
 </style>
