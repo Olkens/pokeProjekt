@@ -35,7 +35,7 @@ export default {
 h1 {
     font-family: 'Avenir';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100;
     font-size: 36px;
     line-height: 40px;
     text-align: center;
