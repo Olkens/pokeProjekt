@@ -1,26 +1,28 @@
 <template>
-    <div class="first">
-        <h1>
-            Witamy w Pokemon 2.0
-        </h1>
-        <p>
-            Witamy na stronie Pokemon 2.0. Skorzystaj z naszych zasobów, 
-            <br>aby dowiedzieć się więcej o pokemonach w Twojej okolicy.
-            <br>Intuicyjny interfejs pozwoli Ci zdobyć wiedzę niezbędną 
-            <br>do zostania najlepszym trenerem Pokemonów w Twojej okolicy.
-        </p>
-    </div>
-    <div class="second">
-        <h1>
-            Przewodnik
-        </h1>
-        <p>
-            Aplikacja służy zdobywaniu wiedzy o Pokemonach takich jak wygląd
-            <br> czy statystyki. Jeżeli chcesz znaleźć konkretnego Pokemona, 
-            <br>przejdź do wyszukiwarki; możesz szukać po nazwie lub zdjęciu.
-            <br>Kiedy znajdziesz Pokemona, który Cię interesuje, będziesz miał
-            <br> możliwosć porównania go z innymi.
-        </p>
+    <div class="first-and-second">
+        <div class="first">
+            <h1>
+                Witamy w Pokemon 2.0
+            </h1>
+            <p>
+                Witamy na stronie Pokemon 2.0. Skorzystaj z naszych zasobów, aby dowiedzieć się więcej o pokemonach w
+                Twojej okolicy.
+                Intuicyjny interfejs pozwoli Ci zdobyć wiedzę niezbędną
+                do zostania najlepszym trenerem Pokemonów w Twojej okolicy.
+            </p>
+        </div>
+        <div class="second">
+            <h1>
+                Przewodnik
+            </h1>
+            <p>
+                Aplikacja służy zdobywaniu wiedzy o Pokemonach takich jak wyglądczy statystyki. Jeżeli chcesz znaleźć
+                konkretnego Pokemona,
+                przejdź do wyszukiwarki; możesz szukać po nazwie lub zdjęciu.
+                Kiedy znajdziesz Pokemona, który Cię interesuje, będziesz miał
+                możliwosć porównania go z innymi.
+            </p>
+        </div>
     </div>
 </template>
 
@@ -37,30 +39,43 @@ h1 {
     font-size: 36px;
     line-height: 40px;
     text-align: center;
-    padding: 30px;
-
+    padding: 10px;
 }
-
 p {
     line-height: 30px;
     font-family: 'Avenir';
-    text-align: center;
+    text-align: justify;
     font-size: 20px;
     color: #60516B;
-
-opacity: 0.9;
+    opacity: 0.9;
+    
+    
+    
 }
+
+
 
 body {
     display: flex;
     flex-direction: column;
     background-color: #FFF9EF;
-   
+    
+
+
 }
-.first {
-    background-color: #FFF9EF;
+.first-and-second {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+    
+    
+
 }
-.second {
-    background-color: #FFF9EF;
+.first, .second {
+    max-width: 700px;
+    
 }
+
 </style>
