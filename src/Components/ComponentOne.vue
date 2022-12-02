@@ -81,7 +81,10 @@ body {
         font-size: 12px;
         line-height: 20px;
     }
-    
+    .first-and-second {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
 
 
