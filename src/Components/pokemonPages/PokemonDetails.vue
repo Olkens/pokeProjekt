@@ -45,11 +45,11 @@
         </div>
       </div>
     </div>
-    <div class="compare"><p>Compare with :</p><div class="search"><p>pokemon name</p></div></div>
-  </div>
-  <div class="button-left"></div>
-  <div class="button-right"></div>
-
+    <div class="botom_box">
+     <div class="arrow"> <img class="button button-left" src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png">
+     </div> <div class="compare"><p>Compare with :</p><div class="search"><p>pokemon name</p></div></div>
+<div class="arrow"><img class="button button-right" src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png">
+</div></div></div>
 </template>
 
 <script>
@@ -78,11 +78,19 @@ export default {
 </script>
 
 <style>
+.botom_box { 
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: auto;
+}
+
 .box {
   margin: 7px;
   width: min-content;
   padding: 3px;
 }
+
 .box,.detail_box{
   background: #fff9ef;
 }
@@ -94,14 +102,23 @@ export default {
   box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
   border-radius: 32px;
 }
+.button{ 
+  margin-top: 12px;
+  width: 60px;
+  height: 60px;
+}
+
+.button-left { 
+ transform: rotate(180deg);
+}
 
 .compare {
+  background: #ffcc03;
   display: flex;
   justify-content: center;
-  width: 30%;
-  margin: 15px 35%;
-  display: flex;
-  background: #ffcc03;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 .deafult {
