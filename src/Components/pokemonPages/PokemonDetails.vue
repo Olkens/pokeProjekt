@@ -48,8 +48,8 @@
     <div class="botom_box">
      <button class="arrow"> <img class="button button-left" src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png">
      </button> <div class="compare"><p>Compare with : </p><div class="search"><p>pokemon name</p></div></div>
-<button class="arrow"><img class="button button-right" src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png">
-</button></div></div>
+     <router-link :to="nextPokemon"> <button class="arrow"><img class="button button-right" src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png">
+</button></router-link></div></div>
 </template>
 
 <script>
@@ -64,6 +64,8 @@ export default {
       url: "https://pokeapi.co/api/v2/pokemon/" + this.$route.params.id,
       pokemonDetails: [],
       types: [],
+      nextPokemon: this.$route.params.id,
+      prevPokemon: "https://pokeapi.co/api/v2/pokemon/" + this.$route.params.id 
     };
   },
   created() {
@@ -81,44 +83,44 @@ export default {
 
 <style>
 button { 
-  background: #fff9ef;
   border: none;
   border-radius: 40px;
+  box-shadow: 5px 5px 10px #00000017, 10px 10px 20px #00000017;
   height: min-content;
   width: min-content;
-  box-shadow: 5px 5px 10px #00000017, 10px 10px 20px #00000017;
 }
 
 .botom_box { 
   display: flex;
   justify-content: center;
-  width: 40%;
   margin: auto;
   margin-bottom: 20px;
+  width: 40%;
 }
 
 .box {
   margin: 7px;
-  width: min-content;
   padding: 3px;
+  width: min-content;
 }
+button, 
 .box,
-.detail_box {
+.detail_box,
+.detail_box  {
   background: #fff9ef;
 }
 
- .box,
+.box,
 .compare,
 .detail_box {
-  background: #fff9ef;
   border-radius: 32px;
   box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
 }
 
 .button{ 
+  height: 60px;
   margin-top: 12px;
   width: 60px;
-  height: 60px;
 }
 
 .button-left { 
@@ -128,10 +130,10 @@ button {
 .compare {
   background: #ffcc03;
   display: flex;
-  justify-content: center;
-  width: 60%;
   margin: auto;
   margin-bottom: 20px;
+  justify-content: center;
+  width: 60%;
 }
 
 .deafult {
@@ -156,15 +158,15 @@ button {
 .details,
 .title,
 .compare {
-  text-align: left;
   padding: 18px;
+  text-align: left;
 }
 
 .main_box {
-  width: 65%;
   display: flex;
   justify-content: center;
   margin: auto;
+  width: 65%;
 }
 
 .shiny {
