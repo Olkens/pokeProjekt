@@ -72,4 +72,30 @@ header nav ul {
   justify-content: center;
   gap: 33px;
 }
+
+/* niedokończone, cos sie rozjechało */
+@media only screen and (max-width: 375px) {
+    .logo {
+        max-width: 200px;
+        max-height: 72px;
+    }
+    
+    .nav-router-link {
+        padding: 6px 20px;
+        font-size: 10px;
+        letter-spacing: 0.10em;
+    }
+    
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+    
+    header nav ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+}
 </style>
