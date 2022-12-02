@@ -45,22 +45,17 @@
         </div>
       </div>
     </div>
-    <div class="compare">
-      <p>Compare with :</p>
-      <div class="search"><br /><br /></div>
-    </div>
-  </div>
-  <div class="compare">Porównaj</div>
-  <div class="button-left">
-    <div class="arr left"><div></div></div>
-  </div>
-  <div class="button-right">
-    <div class="arr right"><div></div></div>
-  </div>
+    <div class="botom_box">
+     <button class="arrow"> <img class="button button-left" src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png">
+     </button> <div class="compare"><p>Compare with : </p><div class="search"><p>pokemon name</p></div></div>
+<button class="arrow"><img class="button button-right" src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png">
+</button></div></div>
 </template>
 
 <script>
 import axios from "axios";
+
+
 export default {
   components: {},
   name: "PokemonDetails",
@@ -85,6 +80,23 @@ export default {
 </script>
 
 <style>
+button { 
+  background: #fff9ef;
+  border: none;
+  border-radius: 40px;
+  height: min-content;
+  width: min-content;
+  box-shadow: 5px 5px 10px #00000017, 10px 10px 20px #00000017;
+}
+
+.botom_box { 
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
 .box {
   margin: 7px;
   width: min-content;
@@ -95,19 +107,31 @@ export default {
   background: #fff9ef;
 }
 
-.box,
+ .box,
 .compare,
 .detail_box {
   background: #fff9ef;
-  box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
   border-radius: 32px;
+  box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
+}
+
+.button{ 
+  margin-top: 12px;
+  width: 60px;
+  height: 60px;
+}
+
+.button-left { 
+ transform: rotate(180deg);
 }
 
 .compare {
-  width: 30%;
-  margin: 15px 35%;
-  display: flex;
   background: #ffcc03;
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 .deafult {
@@ -151,10 +175,14 @@ export default {
   background: #ffcc03;
   border-radius: 32px 32px 0 0;
 }
-.search {
+  .search{
   background: #fff9ef;
-  box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
+  box-shadow:  inset 2px 2px 4px #ffac6099,
+    inset 5px 5px 10px #ffac6080, inset -5px -5px 10px #ffffff;
   border-radius: 32px;
-  width: 79%;
-}
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  }
+
 </style>
