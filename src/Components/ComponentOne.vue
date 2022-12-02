@@ -59,23 +59,30 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #FFF9EF;
-    
-
-
 }
 .first-and-second {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    
-    
-    
-
 }
 .first, .second {
-    max-width: 700px;
+    max-width: 700px; 
+}
+
+@media only screen and (max-width: 375px) {
+    
+    
+    h1 {
+        font-size: 17px;
+        line-height: 20px;
+        letter-spacing: 0.19em;
+    }
+    p {
+        font-size: 12px;
+        line-height: 20px;
+    }
     
 }
+
 
 </style>
