@@ -50,4 +50,16 @@ body {
 }
 
 
+@media only screen and (max-width: 375px) {
+    .footer {
+        height: 70px;
+    }
+    .groupName {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 0;
+    }
+    
+}
+
 </style>
