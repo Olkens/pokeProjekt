@@ -8,7 +8,7 @@
                 Witamy na stronie Pokemon 2.0. Skorzystaj z naszych zasobów, aby dowiedzieć się więcej o pokemonach w
                 Twojej okolicy.
                 Intuicyjny interfejs pozwoli Ci zdobyć wiedzę niezbędną
-                do zostania najlepszym trenerem Pokemonów w Twojej okolicy.
+                do zostania najlepszym trenerem Pokemonów..
             </p>
         </div>
         <div class="second">
