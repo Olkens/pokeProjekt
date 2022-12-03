@@ -46,15 +46,32 @@
       </div>
     </div>
     <div class="botom_box">
-     <button class="arrow"> <img class="button button-left" src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png">
-     </button> <div class="compare"><p>Compare with : </p><div class="search"><p>pokemon name</p></div></div>
-     <router-link :to="nextPokemon"> <button class="arrow"><img class="button button-right" src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png">
-</button></router-link></div></div>
+      <div v-if="pokemonDetails.id > 1">
+        <button @click="loadPokemonDetailsById(pokemonId - 1)"  class="arrow">
+          <img
+            class="button button-left"
+            src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png"
+          />
+        </button>
+      </div>
+      <div class="compare">
+        <p>Compare with :</p>
+        <div class="search"><p>pokemon name</p></div>
+      </div>
+      <div v-if="pokemonDetails.id < 151">
+        <button @click="loadPokemonDetailsById(pokemonId + 1)" class="arrow">
+          <img
+            class="button button-right"
+            src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import axios from "axios";
-
 
 export default {
   components: {},
@@ -62,6 +79,7 @@ export default {
   data() {
     return {
       url: "https://pokeapi.co/api/v2/pokemon/" + this.$route.params.id,
+      loadPokemonId: 0,
       pokemonDetails: [],
       types: [],
       nextPokemon: this.$route.params.id,
@@ -69,20 +87,28 @@ export default {
     };
   },
   created() {
-    axios.get(this.url).then((res) => {
-      this.pokemonDetails = res.data;
-      console.log(this.pokemonDetails);
-      for (let i = 0; i < res.data.types.length; i++) {
-        this.types.push(res.data.types[i].type.name);
-        console.log(res.data.types.length);
-      }
-    });
+    this.loadPokemonDetailsById(this.$route.params.id);
+  },
+
+  methods: {
+    async loadPokemonDetailsById(pokemonId) {
+      this.pokemonDetails = [];
+      this.types = [];
+      await axios.get("https://pokeapi.co/api/v2/pokemon/" + pokemonId).then((res) => {
+          this.pokemonDetails = res.data;
+          this.pokemonId = res.data.id;
+          for (let i = 0; i < res.data.types.length; i++) {
+            this.types.push(res.data.types[i].type.name);
+          }
+        });
+    },
   },
 };
 </script>
 
-<style>
-button { 
+<style scoped>
+button {
+  background: #fff9ef;
   border: none;
   border-radius: 40px;
   box-shadow: 5px 5px 10px #00000017, 10px 10px 20px #00000017;
@@ -90,7 +116,7 @@ button {
   width: min-content;
 }
 
-.botom_box { 
+.botom_box {
   display: flex;
   justify-content: center;
   margin: auto;
@@ -117,14 +143,13 @@ button,
   box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
 }
 
-.button{ 
-  height: 60px;
+.button {
   margin-top: 12px;
   width: 60px;
 }
 
-.button-left { 
- transform: rotate(180deg);
+.button-left {
+  transform: rotate(180deg);
 }
 
 .compare {
@@ -177,14 +202,13 @@ button,
   background: #ffcc03;
   border-radius: 32px 32px 0 0;
 }
-  .search{
+.search {
   background: #fff9ef;
-  box-shadow:  inset 2px 2px 4px #ffac6099,
-    inset 5px 5px 10px #ffac6080, inset -5px -5px 10px #ffffff;
+  box-shadow: inset 2px 2px 4px #ffac6099, inset 5px 5px 10px #ffac6080,
+    inset -5px -5px 10px #ffffff;
   border-radius: 32px;
   display: flex;
   justify-content: center;
   width: 50%;
-  }
-
+}
 </style>
