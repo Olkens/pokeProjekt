@@ -93,8 +93,7 @@ header nav ul {
     }
     
     header nav ul {
-        display: flex;
-        justify-content: flex-end;
+        margin-right: 40px;
         gap: 10px;
     }
 }
