@@ -79,11 +79,9 @@ export default {
   data() {
     return {
       url: "https://pokeapi.co/api/v2/pokemon/" + this.$route.params.id,
-      loadPokemonId: 0,
+      pokemonId: 0,
       pokemonDetails: [],
       types: [],
-      nextPokemon: this.$route.params.id,
-      prevPokemon: "https://pokeapi.co/api/v2/pokemon/" + this.$route.params.id 
     };
   },
   created() {
