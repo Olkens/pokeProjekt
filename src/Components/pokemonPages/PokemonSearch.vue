@@ -76,7 +76,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 $color-grey: rgba(255, 255, 255, 0.5);
 $color-orange: rgba(255, 172, 96, 0.6);
 $color-black: #000;

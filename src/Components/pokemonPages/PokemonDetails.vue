@@ -11,7 +11,6 @@
           <img class="shiny" :src="pokemonDetails.sprites.front_shiny" />
         </div>
       </div>
-
       <div class="detail_box">
         <div class="title">
           No.{{ pokemonDetails.id }} {{ pokemonDetails.name }}
@@ -104,78 +103,50 @@ export default {
 };
 </script>
 
-<style scoped>
-button {
-  background: #fff9ef;
-  border: none;
-  border-radius: 40px;
-  box-shadow: 5px 5px 10px #00000017, 10px 10px 20px #00000017;
-  height: min-content;
-  width: min-content;
-}
-
-.botom_box {
+<style scoped lang="scss">
+$color-black1: #00000017;
+$color-black2: #00000040;
+$color-white1: #fff9ef;
+$color-white2: #ffffff;
+$color-yellow: #ffcc03;
+$color-gold: #625e2e;
+$color-bronze: #ffac6099;
+$color-bronze2: #ffac6080;
+.main_box {
   display: flex;
   justify-content: center;
   margin: auto;
-  margin-bottom: 20px;
-  width: 40%;
-}
-
-.box {
+  width: 65%;
+  .box {
   margin: 7px;
   padding: 3px;
   width: min-content;
 }
-button, 
-.box,
-.detail_box,
-.detail_box  {
-  background: #fff9ef;
-}
-
-.box,
-.compare,
-.detail_box {
-  border-radius: 32px;
-  box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
-}
-
-.button {
-  margin-top: 12px;
-  width: 60px;
-}
-
-.button-left {
-  transform: rotate(180deg);
-}
-
-.compare {
-  background: #ffcc03;
-  display: flex;
-  margin: auto;
-  margin-bottom: 20px;
-  justify-content: center;
-  width: 60%;
-}
-
 .deafult {
   width: 150px;
+}
+.shiny {
+  width: 120px;
+}
 }
 
 .detail_box {
   height: 400px;
   width: 50%;
+  .title {
+  background: $color-yellow;
+  border-radius: 32px 32px 0 0;
 }
 .details,
 .title {
-  color: #625e2e;
+  color: $color-gold;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-size: 20px;
   letter-spacing: 0.2em;
   text-transform: capitalize;
   text-decoration: none;
+}
 }
 
 .details,
@@ -185,28 +156,57 @@ button,
   text-align: left;
 }
 
-.main_box {
+button, 
+.box,
+.detail_box{
+  background: $color-white1;
+}
+
+.botom_box {
   display: flex;
   justify-content: center;
   margin: auto;
-  width: 65%;
+  margin-bottom: 20px;
+  width: 40%;
+  button {
+  background: $color-white1;
+  border: none;
+  border-radius: 40px;
+  box-shadow: 5px 5px 10px $color-black1, 10px 10px 20px $color-black1;
+  height: min-content;
+  width: min-content;
 }
-
-.shiny {
-  width: 120px;
+.button {
+  margin-top: 12px;
+  width: 60px;
 }
-
-.title {
-  background: #ffcc03;
-  border-radius: 32px 32px 0 0;
+.button-left {
+  transform: rotate(180deg);
+}
+.compare {
+  background: $color-yellow;
+  display: flex;
+  margin: auto;
+  margin-bottom: 20px;
+  justify-content: center;
+  width: 60%;
 }
 .search {
-  background: #fff9ef;
-  box-shadow: inset 2px 2px 4px #ffac6099, inset 5px 5px 10px #ffac6080,
-    inset -5px -5px 10px #ffffff;
+  background: $color-white1;
+  box-shadow: inset 2px 2px 4px $color-bronze, inset 5px 5px 10px $color-bronze2,
+    inset -5px -5px 10px $color-white2;
   border-radius: 32px;
   display: flex;
   justify-content: center;
   width: 50%;
 }
+}
+
+.box,
+.compare,
+.detail_box {
+  border-radius: 32px;
+  box-shadow: 5px 5px 10px $color-black2, 10px 10px 20px $color-black2;
+}
+
 </style>

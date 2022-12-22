@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .card {
   display: flex;
   flex-direction: column;
