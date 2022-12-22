@@ -76,7 +76,11 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+$color-grey: rgba(255, 255, 255, 0.5);
+$color-orange: rgba(255, 172, 96, 0.6);
+$color-black: #000;
+$color-white: #ffffff;
 .flex-center {
   display: flex;
   justify-content: center;
@@ -107,117 +111,100 @@ export default {
   height: 64px;
   padding: 10px 26px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid $color-black;
   height: 25px;
-  background: #ffffff;
-  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5),
-    inset 2px 2px 4px rgba(255, 172, 96, 0.6),
-    inset 5px 5px 10px rgba(255, 172, 96, 0.5), inset -5px -5px 10px #ffffff;
+  background: $color-white;
+  box-shadow: inset -2px -2px 4px $color-grey,
+    inset 2px 2px 4px $color-orange,
+    inset 5px 5px 10px $color-orange, inset -5px -5px 10px $color-white;
   border-radius: 40px;
   margin-bottom: 25px;
 }
 
 .router-display {
   text-decoration: none;
-  color: black;
+  color: $color-black;
 }
 
 /* SPINNER */
-.lds-roller {
-  display: inline-block;
+.lds{
+  &-roller{
+    display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
-}
-
-.lds-roller div {
-  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  transform-origin: 40px 40px;
-}
-
-.lds-roller div:after {
-  content: " ";
-  display: block;
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #000;
-  margin: -4px 0 0 -4px;
-}
-
-.lds-roller div:nth-child(1) {
-  animation-delay: -0.036s;
-}
-
-.lds-roller div:nth-child(1):after {
-  top: 63px;
-  left: 63px;
-}
-
-.lds-roller div:nth-child(2) {
+  }
+  &div{
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+  }
+  &div::after{
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: $color-black;
+    margin: -4px 0 0 -4px;
+  }
+  &:nth-child(1){
+    animation-delay: -0.036s;
+  }
+  &:nth-child(1)::after{
+    top: 63px;
+    left: 63px;
+  }
+  &:nth-child(2) {
   animation-delay: -0.072s;
-}
-
-.lds-roller div:nth-child(2):after {
+  }
+  &:nth-child(2):after {
   top: 68px;
   left: 56px;
-}
-
-.lds-roller div:nth-child(3) {
+  }
+  &:nth-child(3) {
   animation-delay: -0.108s;
-}
-
-.lds-roller div:nth-child(3):after {
+  }
+  &:nth-child(3):after {
   top: 71px;
   left: 48px;
-}
-
-.lds-roller div:nth-child(4) {
+  }
+  &:nth-child(4) {
   animation-delay: -0.144s;
-}
-
-.lds-roller div:nth-child(4):after {
+  }
+  &:nth-child(4):after {
   top: 72px;
   left: 40px;
-}
-
-.lds-roller div:nth-child(5) {
+  }
+  &:nth-child(5) {
   animation-delay: -0.18s;
-}
-
-.lds-roller div:nth-child(5):after {
+  }
+  &:nth-child(5):after {
   top: 71px;
   left: 32px;
-}
-
-.lds-roller div:nth-child(6) {
+  }
+  &:nth-child(6) {
   animation-delay: -0.216s;
-}
-
-.lds-roller div:nth-child(6):after {
+  }
+  &:nth-child(6):after {
   top: 68px;
   left: 24px;
-}
-
-.lds-roller div:nth-child(7) {
+  }
+  &:nth-child(7) {
   animation-delay: -0.252s;
-}
-
-.lds-roller div:nth-child(7):after {
+  }
+  &:nth-child(7):after {
   top: 63px;
   left: 17px;
-}
-
-.lds-roller div:nth-child(8) {
+  }
+  &:nth-child(8) {
   animation-delay: -0.288s;
-}
-
-.lds-roller div:nth-child(8):after {
+  }
+  &:nth-child(8):after {
   top: 56px;
   left: 12px;
 }
-
+}
 @keyframes lds-roller {
   0% {
     transform: rotate(0deg);
@@ -228,7 +215,78 @@ export default {
   }
 }
 
-
+@media only screen and (max-width: 412px) {
+  .pokemonSearch {
+    max-width: 350px;
+  }
+  .search-bar {
+    height: 25px;
+    margin-bottom: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .display-pokemons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+}
+@media only screen and (max-width: 360px) {
+  .pokemonSearch {
+    max-width: 250px;
+  }
+  .search-bar {
+    height: 15px;
+    margin-bottom: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .display-pokemons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+}
+@media only screen and (max-width: 384px) {
+  .pokemonSearch {
+    max-width: 250px;
+  }
+  .search-bar {
+    height: 15px;
+    margin-bottom: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .display-pokemons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+}
+@media only screen and (max-width: 810px) {
+  .pokemonSearch {
+    max-width: 600px;
+  }
+  .search-bar {
+    height: 15px;
+    margin-bottom: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .display-pokemons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+}
 @media only screen and (max-width: 375px) {
   .pokemonSearch {
     max-width: 250px;
@@ -246,7 +304,24 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
+} 
 }
-  
+@media only screen and (max-width: 414px) {
+  .pokemonSearch {
+    max-width: 250px;
+  }
+  .search-bar {
+    height: 25px;
+    margin-bottom: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .display-pokemons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
 }
 </style>
