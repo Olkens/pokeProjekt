@@ -105,33 +105,55 @@ export default {
 </script>
 
 <style scoped>
+
 button {
-  background: #fff9ef;
   border: none;
   border-radius: 40px;
   box-shadow: 5px 5px 10px #00000017, 10px 10px 20px #00000017;
   height: min-content;
-  width: min-content;
 }
 
-.botom_box {
+.botom_box, 
+.compare,
+.main_box,
+.search  {
   display: flex;
-  justify-content: center;
-  margin: auto;
-  margin-bottom: 20px;
+}
+
+.botom_box, 
+.compare, 
+.main_box {
+  margin: auto;  
+}
+  .botom_box {
   width: 40%;
 }
 
-.box {
+.botom_box,
+.compare {
+  margin-bottom: 20px;
+
+}
+.box,
+button  {
+  width: min-content;
+
+}
+  .box {
   margin: 7px;
   padding: 3px;
-  width: min-content;
 }
-button, 
+ 
 .box,
+button,
 .detail_box,
-.detail_box  {
+.detail_box,
+.search  {
   background: #fff9ef;
+}
+
+.botom_box, .compare, .main_box, .search {
+  justify-content: center;
 }
 
 .box,
@@ -145,18 +167,22 @@ button,
   margin-top: 12px;
   width: 60px;
 }
-
 .button-left {
   transform: rotate(180deg);
 }
 
 .compare {
   background: #ffcc03;
-  display: flex;
-  margin: auto;
-  margin-bottom: 20px;
-  justify-content: center;
-  width: 60%;
+  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.compare,
+  .main_box {
+  width: 65%;
+}
+
+.compare, .search {
+  font-size: calc(10px + (20 - 10) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .deafult {
@@ -165,14 +191,18 @@ button,
 
 .detail_box {
   height: 400px;
+}
+
+.detail_box,.search {
   width: 50%;
 }
+
 .details,
 .title {
   color: #625e2e;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-size: 20px;
+  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
   letter-spacing: 0.2em;
   text-transform: capitalize;
   text-decoration: none;
@@ -185,13 +215,6 @@ button,
   text-align: left;
 }
 
-.main_box {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  width: 65%;
-}
-
 .shiny {
   width: 120px;
 }
@@ -201,12 +224,8 @@ button,
   border-radius: 32px 32px 0 0;
 }
 .search {
-  background: #fff9ef;
   box-shadow: inset 2px 2px 4px #ffac6099, inset 5px 5px 10px #ffac6080,
     inset -5px -5px 10px #ffffff;
   border-radius: 32px;
-  display: flex;
-  justify-content: center;
-  width: 50%;
 }
 </style>
