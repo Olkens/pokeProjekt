@@ -43,7 +43,7 @@ body {
         .first, .second {
             max-width: 700px;
             h1 {
-                font-family: 'Avenir';
+                font-family: 'Montserrat', sans-serif;
                 font-style: normal;
                 font-weight: 100;
                 font-size: 36px;
@@ -53,7 +53,8 @@ body {
             }
             p {
                 line-height: 30px;
-                font-family: 'Avenir';
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
                 text-align: justify;
                 font-size: 20px;
                 color: #60516B;
