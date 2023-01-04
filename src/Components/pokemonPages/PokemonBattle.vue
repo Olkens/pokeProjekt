@@ -6,15 +6,15 @@
           Your group
         </div>
        <div class="box">
-          <p>No.{{ pokemonDetails.id }} {{ pokemonDetails.name }}</p>
+          <p>No.{{randomNum()}}</p>
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
         </div>
         <div class="box">
-          <p>No.{{ pokemonDetails.id }} {{ pokemonDetails.name }}</p>
+          <p>No.{{randomNum()}}</p>
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
         </div>
         <div class="box">
-          <p>No.{{ pokemonDetails.id }} {{ pokemonDetails.name }}</p>
+          <p>No.{{randomNum()}}</p>
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
         </div>
     </div>
@@ -24,15 +24,15 @@
             Team R group
         </div>
        <div class="box">
-          <p>No.{{ pokemonDetails.id }} {{ pokemonDetails.name }}</p>
+          <p>No.{{randomNum()}}</p>
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
         </div> 
         <div class="box">
-          <p>No.{{ pokemonDetails.id }} {{ pokemonDetails.name }}</p>
+          <p>No.{{randomNum()}}</p>
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
         </div>
         <div class="box">
-          <p>No.{{ pokemonDetails.id }} {{ pokemonDetails.name }}</p>
+          <p>No.{{randomNum()}}</p>
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
         </div>
     </div>
@@ -45,14 +45,22 @@
 export default {
   components: {},
   name: "PokemonBattle",
+  methods : {
+    randomNum: function myFunction(){
+      return Math.floor(Math.random() * (151 - 1 + 1)) + 1;
+  },
+},
   data() {
     return {
       pokemonId: 0,
       pokemonDetails: [],
       types: [],
+      randomNumber: '',
     };
   },
-}
+};
+
+
 </script>
 <style scoped>
 
@@ -72,12 +80,12 @@ button {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25),
     10px 10px 20px rgba(0, 0, 0, 0.25);
   border-radius: 32px;
-  margin: 20px;
+  margin: 25px;
   padding: 16px 60px;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   text-decoration: none;
-  font-size: 18px;
+  font-size: calc(14px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
   color: #fff;
   letter-spacing: 0.19em;
 }
