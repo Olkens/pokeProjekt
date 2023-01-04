@@ -5,6 +5,7 @@ import App from './App.vue'
 import PokemonSearch from './Components/pokemonPages/PokemonSearch'
 import PokemonDetails from './Components/pokemonPages/PokemonDetails'
 import HomePage from './Components/HomePage'
+import PokemonBattle from './Components/pokemonPages/PokemonBattle'
 
 
 const router = createRouter({
@@ -13,7 +14,8 @@ const router = createRouter({
 
         {path: '/', component: HomePage,},
         {path: '/pokemonPages/PokemonSearch', component: PokemonSearch},
-        {path: '/pokemonPages/PokemonDetails/:id', component: PokemonDetails}
+        {path: '/pokemonPages/PokemonDetails/:id', component: PokemonDetails},
+        {path: '/pokemonPages/PokemonBattle', component: PokemonBattle}
     ],
 })
 
