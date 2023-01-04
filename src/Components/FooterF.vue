@@ -19,7 +19,7 @@ body {
     .footer-container {
         display: flex;
         align-items: flex-end;
-
+        
         .footer {
             width: 100%;
             height: 129px;
