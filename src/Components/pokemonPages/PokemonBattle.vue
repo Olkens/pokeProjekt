@@ -5,40 +5,42 @@
         <div class="title">
           Your group
         </div>
-       <div class="box">
-          <p>No.{{randomNum()}}</p>
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
+        <div class="box">
+        <p>No.{{yourFirst}}</p>
+          <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + yourFirst + '.png'">
+           </div> 
+        <div class="box">
+          <p>No.{{yourSecond}}</p>
+          <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + yourSecond + '.png'">
         </div>
         <div class="box">
-          <p>No.{{randomNum()}}</p>
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
+          <p>No.{{yourThird}}</p>
+          <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + yourThird + '.png'">
         </div>
-        <div class="box">
-          <p>No.{{randomNum()}}</p>
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
         </div>
-    </div>
     <img class="team_img" src="https://www.pngall.com/wp-content/uploads/5/Versus-PNG-HD-Image.png">
     <div class="group_box">
         <div class="title">
             Team R group
         </div>
        <div class="box">
-          <p>No.{{randomNum()}}</p>
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
-        </div> 
+          <p>No.{{rFirst}}</p>
+          <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + rFirst + '.png'">
+                </div> 
         <div class="box">
-          <p>No.{{randomNum()}}</p>
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
+          <p>No.{{rSecond}}</p>
+          <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + rSecond + '.png'">
         </div>
         <div class="box">
-          <p>No.{{randomNum()}}</p>
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
+          <p>No.{{rThird}}</p>
+          <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + rThird + '.png'">
         </div>
     </div>
     <img class="team_img" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/da4c8018-fd02-405a-aa3d-9ed90468efed/ddg2er4-1a8dd0ce-9c16-4c8b-8b67-caea38ca0473.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RhNGM4MDE4LWZkMDItNDA1YS1hYTNkLTllZDkwNDY4ZWZlZFwvZGRnMmVyNC0xYThkZDBjZS05YzE2LTRjOGItOGI2Ny1jYWVhMzhjYTA0NzMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.R1O8FP6F_LP7QCy15pv4ks2o9-Rt0bo083-iyk-nUqA">
-</div>  
- <button>Start Battle!</button>
+</div>
+
+ <button @click="count++">Start Battle!</button>
+ <p>Count is: {{ count }}</p>
 </template>
 <script>
 
@@ -47,7 +49,7 @@ export default {
   name: "PokemonBattle",
   methods : {
     randomNum: function myFunction(){
-      return Math.floor(Math.random() * (151 - 1 + 1)) + 1;
+      return ;
   },
 },
   data() {
@@ -55,9 +57,16 @@ export default {
       pokemonId: 0,
       pokemonDetails: [],
       types: [],
-      randomNumber: '',
+      count: 0,
+      yourFirst: Math.floor(Math.random() * (151 - 1 + 1)) + 1,
+      yourSecond: Math.floor(Math.random() * (151 - 1 + 1)) + 1,
+      yourThird: Math.floor(Math.random() * (151 - 1 + 1)) + 1,
+      rFirst: Math.floor(Math.random() * (151 - 1 + 1)) + 1,
+      rSecond: Math.floor(Math.random() * (151 - 1 + 1)) + 1,
+      rThird: Math.floor(Math.random() * (151 - 1 + 1)) + 1,
     };
   },
+
 };
 
 
