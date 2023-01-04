@@ -18,6 +18,9 @@
             >
           </li>
           <li>
+            <router-link class="nav-router-link" to="/pokemonPages/PokemonBattle">Battle</router-link>
+          </li>
+          <li>
             <router-link class="nav-router-link" to="/">About</router-link>
           </li>
         </ul>

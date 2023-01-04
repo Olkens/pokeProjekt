@@ -140,10 +140,13 @@ button  {
 
 }
   .box {
-  margin: 7px;
   padding: 3px;
 }
  
+.box, .detail_box {
+  margin: 10px;
+}
+
 .box,
 button,
 .detail_box,
@@ -161,6 +164,7 @@ button,
 .detail_box {
   border-radius: 32px;
   box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
+  height: auto;
 }
 
 .button {
@@ -190,7 +194,7 @@ button,
 }
 
 .detail_box {
-  height: 400px;
+  height: auto;
 }
 
 .detail_box,.search {
