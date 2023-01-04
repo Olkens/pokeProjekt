@@ -36,12 +36,16 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #FFF9EF;
+
     .first-and-second {
         display: flex;
         flex-direction: column;
         align-items: center;
-        .first, .second {
+
+        .first,
+        .second {
             max-width: 700px;
+
             h1 {
                 font-family: 'Montserrat', sans-serif;
                 font-style: normal;
@@ -51,6 +55,7 @@ body {
                 text-align: center;
                 padding: 10px;
             }
+
             p {
                 line-height: 30px;
                 font-family: 'Montserrat', sans-serif;
@@ -64,23 +69,58 @@ body {
     }
 }
 
-@media only screen and (max-width: 375px) {
-    
-    
-    h1 {
-        font-size: 17px;
-        line-height: 20px;
-        letter-spacing: 0.19em;
-    }
-    p {
-        font-size: 12px;
-        line-height: 20px;
-    }
-    .first-and-second {
-        margin-left: 20px;
-        margin-right: 20px;
+@media only screen and (max-width: 376px) {
+    body {
+        display: flex;
+        flex-direction: column;
+
+        .first-and-second {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .first,
+            .second {
+                max-width: 370px;
+
+                h1 {
+                    font-size: 26px;
+                    padding: 10px;
+                }
+                p {
+                    line-height: 30px;
+                    font-size: 16px;
+                    margin: 20px;
+                }
+            }
+        }
     }
 }
+@media only screen and (max-width: 541px) {
+    body {
+        display: flex;
+        flex-direction: column;
 
+        .first-and-second {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
+            .first,
+            .second {
+                max-width: 400px;
+
+                h1 {
+                    font-size: 30px;
+                    padding: 10px;
+                }
+                p {
+                    line-height: 30px;
+                    font-size: 16px;
+                    margin: 10px;
+                }
+            }
+        }
+    }
+}
 </style>

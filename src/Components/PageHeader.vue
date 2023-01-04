@@ -11,11 +11,7 @@
           </li>
 
           <li>
-            <router-link
-              class="nav-router-link"
-              to="/pokemonPages/PokemonSearch"
-              >Wyszukiwarka</router-link
-            >
+            <router-link class="nav-router-link" to="/pokemonPages/PokemonSearch">Wyszukiwarka</router-link>
           </li>
           <li>
             <router-link class="nav-router-link" to="/">About</router-link>
@@ -36,18 +32,23 @@ export default {};
   flex-direction: column;
   padding-top: 65px;
   padding-bottom: 65px;
+  
+
   .logo {
     max-width: 400px;
     max-height: 144px;
   }
+
   header {
     margin-top: 45px;
+
     nav {
       ul {
         display: flex;
         list-style: none;
         justify-content: center;
         gap: 33px;
+
         .nav-router-link {
           background: #6061c4;
           box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25),
@@ -60,6 +61,7 @@ export default {};
           font-size: 18px;
           color: #fff;
           letter-spacing: 0.19em;
+
           &:hover {
             background: #ffcc03;
             color: #6061c4;
@@ -69,29 +71,108 @@ export default {};
     }
   }
 }
+@media only screen and (max-width: 376px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px;
+    
 
-/* niedokończone, cos sie rozjechało */
-@media only screen and (max-width: 375px) {
     .logo {
-        max-width: 200px;
-        max-height: 72px;
+      max-width: 200px;
+      max-height: 100px;
     }
-    
-    .nav-router-link {
-        padding: 6px 20px;
-        font-size: 10px;
-        letter-spacing: 0.10em;
-    }
-    
-    .main-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-    }
-    
+
     header nav ul {
-        margin-right: 40px;
-        gap: 10px;
+      
+      gap: 9px;
+
+      .nav-router-link {
+        padding: 10px 16px;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+      }
     }
+  }
+}
+@media only screen and (max-width: 415px) {
+  
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px;
+    
+
+    .logo {
+      max-width: 220px;
+      max-height: 100px;
+      margin-left: 40px;
+    }
+
+    header nav ul {
+      
+      gap: 9px;
+
+      .nav-router-link {
+        padding: 12px 18px;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 541px) {
+  
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px;
+    
+
+    .logo {
+      max-width: 220px;
+      max-height: 100px;
+    }
+
+    header nav ul {
+      
+      gap: 20px;
+
+      .nav-router-link {
+        padding: 12px 22px;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 281px) {
+  
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    .logo {
+      max-width: 200px;
+      max-height: 100px;
+      margin-left: 40px;
+    }
+
+    header nav ul {
+      
+      gap: 10px;
+
+      .nav-router-link {
+        padding: 10px 16px;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+      }
+    }
+  }
 }
 </style>
