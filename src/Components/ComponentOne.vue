@@ -8,7 +8,7 @@
                 Witamy na stronie Pokemon 2.0. Skorzystaj z naszych zasobów, aby dowiedzieć się więcej o pokemonach w
                 Twojej okolicy.
                 Intuicyjny interfejs pozwoli Ci zdobyć wiedzę niezbędną
-                do zostania najlepszym trenerem Pokemonów w Twojej okolicy.
+                do zostania najlepszym trenerem Pokemonów..
             </p>
         </div>
         <div class="second">
@@ -31,42 +31,36 @@ export default {
     name: 'ComponentOne',
 };
 </script>
-<style scoped>
-h1 {
-    font-family: 'Avenir';
-    font-style: normal;
-    font-weight: 100;
-    font-size: 36px;
-    line-height: 40px;
-    text-align: center;
-    padding: 10px;
-}
-p {
-    line-height: 30px;
-    font-family: 'Avenir';
-    text-align: justify;
-    font-size: 20px;
-    color: #60516B;
-    opacity: 0.9;
-    
-    
-    
-}
-
-
-
+<style scoped lang="scss">
 body {
     display: flex;
     flex-direction: column;
     background-color: #FFF9EF;
-}
-.first-and-second {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.first, .second {
-    max-width: 700px; 
+    .first-and-second {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .first, .second {
+            max-width: 700px;
+            h1 {
+                font-family: 'Avenir';
+                font-style: normal;
+                font-weight: 100;
+                font-size: 36px;
+                line-height: 40px;
+                text-align: center;
+                padding: 10px;
+            }
+            p {
+                line-height: 30px;
+                font-family: 'Avenir';
+                text-align: justify;
+                font-size: 20px;
+                color: #60516B;
+                opacity: 0.9;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 375px) {
