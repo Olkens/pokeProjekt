@@ -33,47 +33,44 @@
 export default {};
 </script>
 
-<style scoped>
-.logo {
-  max-width: 400px;
-  max-height: 144px;
-}
-.nav-router-link {
-  background: #6061c4;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25),
-    10px 10px 20px rgba(0, 0, 0, 0.25);
-  border-radius: 32px;
-  padding: 16px 60px;
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  text-decoration: none;
-  font-size: 18px;
-  color: #fff;
-  letter-spacing: 0.19em;
-}
-
-.nav-router-link:hover {
-  background: #ffcc03;
-  color: #6061c4;
-}
-
+<style scoped lang="scss">
 .main-container {
   display: flex;
   flex-direction: column;
   padding-top: 65px;
   padding-bottom: 65px;
-}
-
-header {
+  .logo {
+    max-width: 400px;
+    max-height: 144px;
+  }
+  header {
     margin-top: 45px;
-}
-
-header nav ul {
-  display: flex;
-
-  list-style: none;
-  justify-content: center;
-  gap: 33px;
+    nav {
+      ul {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        gap: 33px;
+        .nav-router-link {
+          background: #6061c4;
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25),
+            10px 10px 20px rgba(0, 0, 0, 0.25);
+          border-radius: 32px;
+          padding: 16px 60px;
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          text-decoration: none;
+          font-size: 18px;
+          color: #fff;
+          letter-spacing: 0.19em;
+          &:hover {
+            background: #ffcc03;
+            color: #6061c4;
+          }
+        }
+      }
+    }
+  }
 }
 
 /* niedokończone, cos sie rozjechało */
@@ -96,8 +93,7 @@ header nav ul {
     }
     
     header nav ul {
-        display: flex;
-        justify-content: flex-end;
+        margin-right: 40px;
         gap: 10px;
     }
 }
