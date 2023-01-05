@@ -11,7 +11,7 @@
           </li>
 
           <li>
-            <router-link class="nav-router-link" to="/pokemonPages/PokemonSearch">Wyszukiwarka</router-link>
+            <router-link class="nav-router-link" to="/pokemonPages/PokemonSearch">Search</router-link>
           </li>
           <li>
             <router-link class="nav-router-link" to="/pokemonPages/PokemonBattle">Battle</router-link>
@@ -76,106 +76,131 @@ export default {};
 }
 @media only screen and (max-width: 376px) {
   .main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 40px;
-    
-
-    .logo {
-      max-width: 200px;
-      max-height: 100px;
-    }
-
-    header nav ul {
-      
-      gap: 9px;
-
-      .nav-router-link {
-        padding: 10px 16px;
-        font-size: 10px;
-        letter-spacing: 0.1em;
+      .logo {
+        max-width: 300px;
+        max-height: 100px;
       }
-    }
-  }
-}
-@media only screen and (max-width: 415px) {
   
-  .main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 40px;
-    
-
-    .logo {
-      max-width: 220px;
-      max-height: 100px;
-      margin-left: 40px;
-    }
-
-    header nav ul {
-      
-      gap: 9px;
-
-      .nav-router-link {
-        padding: 12px 18px;
-        font-size: 10px;
-        letter-spacing: 0.1em;
-      }
-    }
-  }
-}
-@media only screen and (max-width: 541px) {
+      header {
+        margin-top: 45px;
+        margin-right: 20px;
   
-  .main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 40px;
-    
-
-    .logo {
-      max-width: 220px;
-      max-height: 100px;
-    }
-
-    header nav ul {
-      
-      gap: 20px;
-
-      .nav-router-link {
-        padding: 12px 22px;
-        font-size: 13px;
-        letter-spacing: 0.1em;
-      }
-    }
-  }
-}
-@media only screen and (max-width: 281px) {
+        nav {
   
-  .main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-
-    .logo {
-      max-width: 200px;
-      max-height: 100px;
-      margin-left: 40px;
-    }
-
-    header nav ul {
-      
-      gap: 10px;
-
-      .nav-router-link {
-        padding: 10px 16px;
-        font-size: 10px;
-        letter-spacing: 0.1em;
+          ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            margin-right: 15px;
+  
+            gap: 33px;
+  
+            .nav-router-link {
+              padding: 16px 30px;
+              font-size: 16px;
+              letter-spacing: 0.19em;
+              display: flex;
+            }
+          }
+        }
       }
     }
   }
-}
+  
+  @media only screen and (max-width: 415px) {
+    .main-container {
+      .logo {
+        max-width: 300px;
+        max-height: 100px;
+      }
+  
+      header {
+        margin-top: 45px;
+        margin-right: 20px;
+  
+        nav {
+  
+          ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            margin-right: 15px;
+  
+            gap: 33px;
+  
+            .nav-router-link {
+              padding: 16px 30px;
+              font-size: 16px;
+              letter-spacing: 0.19em;
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 821px) {
+    .main-container {
+      .logo {
+        max-width: 300px;
+        max-height: 100px;
+      }
+  
+      header {
+        margin-top: 45px;
+        margin-right: 20px;
+  
+        nav {
+  
+          ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            margin-right: 15px;
+  
+            gap: 33px;
+  
+            .nav-router-link {
+              padding: 18px 40px;
+              font-size: 18px;
+              letter-spacing: 0.19em;
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 281px) {
+    .main-container {
+      .logo {
+        max-width: 200px;
+        max-height: 100px;
+      }
+  
+      header {
+        margin-top: 45px;
+        margin-right: 20px;
+  
+        nav {
+  
+          ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            margin-right: 15px;
+  
+            gap: 33px;
+  
+            .nav-router-link {
+              padding: 12px 20px;
+              font-size: 12px;
+              letter-spacing: 0.1em;
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
 </style>
