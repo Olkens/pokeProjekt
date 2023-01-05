@@ -76,6 +76,8 @@ export default {};
 }
 @media only screen and (max-width: 376px) {
   .main-container {
+    display: flex;
+    flex-direction: column;
       .logo {
         max-width: 300px;
         max-height: 100px;
@@ -93,12 +95,12 @@ export default {};
             flex-wrap: wrap;
             margin-right: 15px;
   
-            gap: 33px;
+            gap: 20px;
   
             .nav-router-link {
-              padding: 16px 30px;
-              font-size: 16px;
-              letter-spacing: 0.19em;
+              padding: 12px 20px;
+              font-size: 12px;
+              letter-spacing: 0.1em;
               display: flex;
             }
           }
@@ -106,9 +108,10 @@ export default {};
       }
     }
   }
-  
   @media only screen and (max-width: 415px) {
-    .main-container {
+  .main-container {
+    display: flex;
+    flex-direction: column;
       .logo {
         max-width: 300px;
         max-height: 100px;
@@ -126,12 +129,12 @@ export default {};
             flex-wrap: wrap;
             margin-right: 15px;
   
-            gap: 33px;
+            gap: 20px;
   
             .nav-router-link {
               padding: 16px 30px;
-              font-size: 16px;
-              letter-spacing: 0.19em;
+              font-size: 15px;
+              letter-spacing: 0.1em;
               display: flex;
             }
           }
@@ -140,7 +143,9 @@ export default {};
     }
   }
   @media only screen and (max-width: 821px) {
-    .main-container {
+  .main-container {
+    display: flex;
+    flex-direction: column;
       .logo {
         max-width: 300px;
         max-height: 100px;
@@ -158,11 +163,11 @@ export default {};
             flex-wrap: wrap;
             margin-right: 15px;
   
-            gap: 33px;
+            gap: 20px;
   
             .nav-router-link {
-              padding: 18px 40px;
-              font-size: 18px;
+              padding: 19px 40px;
+              font-size: 15px;
               letter-spacing: 0.19em;
               display: flex;
             }
@@ -170,9 +175,45 @@ export default {};
         }
       }
     }
-  }
+  } 
+  @media only screen and (max-width: 541px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+      .logo {
+        max-width: 300px;
+        max-height: 100px;
+      }
+  
+      header {
+        margin-top: 45px;
+        margin-right: 20px;
+  
+        nav {
+  
+          ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            margin-right: 15px;
+  
+            gap: 20px;
+  
+            .nav-router-link {
+              padding: 16px 30px;
+              font-size: 12px;
+              letter-spacing: 0.1em;
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  } 
   @media only screen and (max-width: 281px) {
-    .main-container {
+  .main-container {
+    display: flex;
+    flex-direction: column;
       .logo {
         max-width: 200px;
         max-height: 100px;
@@ -190,10 +231,10 @@ export default {};
             flex-wrap: wrap;
             margin-right: 15px;
   
-            gap: 33px;
+            gap: 20px;
   
             .nav-router-link {
-              padding: 12px 20px;
+              padding: 13px 20px;
               font-size: 12px;
               letter-spacing: 0.1em;
               display: flex;
