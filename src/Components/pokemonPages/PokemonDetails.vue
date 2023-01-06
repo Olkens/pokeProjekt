@@ -103,25 +103,64 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-$color-black1: #00000017;
-$color-black2: #00000040;
-$color-white1: #fff9ef;
-$color-white2: #ffffff;
-$color-yellow: #ffcc03;
-$color-gold: #625e2e;
-$color-bronze: #ffac6099;
-$color-bronze2: #ffac6080;
-.main_box {
+<style scoped>
+button {
+  background: #fff9ef;
+  border: none;
+  border-radius: 40px;
+  box-shadow: 5px 5px 10px #00000017, 10px 10px 20px #00000017;
+  height: min-content;
+  width: min-content;
+}
+
+.botom_box {
   display: flex;
   justify-content: center;
   margin: auto;
-  width: 65%;
-  .box {
+  margin-bottom: 20px;
+  width: 40%;
+}
+
+.box {
   margin: 7px;
   padding: 3px;
-  width: min-content;
 }
+ 
+.box, .detail_box {
+  margin: 10px;
+}
+button, 
+.box,
+.detail_box,
+.detail_box  {
+  background: #fff9ef;
+}
+
+.box,
+.compare,
+.detail_box {
+  border-radius: 32px;
+  box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
+}
+
+.button {
+  margin-top: 12px;
+  width: 60px;
+}
+
+.button-left {
+  transform: rotate(180deg);
+}
+
+.compare {
+  background: #ffcc03;
+  display: flex;
+  margin: auto;
+  margin-bottom: 20px;
+  justify-content: center;
+  width: 60%;
+}
+
 .deafult {
   width: 150px;
 }
@@ -131,18 +170,22 @@ $color-bronze2: #ffac6080;
 }
 
 .detail_box {
-  height: 400px;
+  height: auto;
+}
+
+.detail_box,.search {
   width: 50%;
   .title {
   background: $color-yellow;
   border-radius: 32px 32px 0 0;
 }
+
 .details,
 .title {
   color: $color-gold;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-size: 20px;
+  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
   letter-spacing: 0.2em;
   text-transform: capitalize;
   text-decoration: none;
@@ -156,32 +199,15 @@ $color-bronze2: #ffac6080;
   text-align: left;
 }
 
-button, 
-.box,
-.detail_box{
-  background: $color-white1;
-}
-
-.botom_box {
+.main_box {
   display: flex;
   justify-content: center;
   margin: auto;
-  margin-bottom: 20px;
-  width: 40%;
-  button {
-  background: $color-white1;
-  border: none;
-  border-radius: 40px;
-  box-shadow: 5px 5px 10px $color-black1, 10px 10px 20px $color-black1;
-  height: min-content;
-  width: min-content;
+  width: 65%;
 }
-.button {
-  margin-top: 12px;
-  width: 60px;
-}
-.button-left {
-  transform: rotate(180deg);
+
+.shiny {
+  width: 120px;
 }
 .compare {
   background: $color-yellow;
@@ -192,13 +218,10 @@ button,
   width: 60%;
 }
 .search {
-  background: $color-white1;
-  box-shadow: inset 2px 2px 4px $color-bronze, inset 5px 5px 10px $color-bronze2,
-    inset -5px -5px 10px $color-white2;
+  background: #fff9ef;
+  box-shadow: inset 2px 2px 4px #ffac6099, inset 5px 5px 10px #ffac6080,
+    inset -5px -5px 10px #ffffff;
   border-radius: 32px;
-  display: flex;
-  justify-content: center;
-  width: 50%;
 }
 }
 
