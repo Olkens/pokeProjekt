@@ -8,7 +8,7 @@
         <div class="box">
         <p>No.{{yourFirst}}</p>
           <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + yourFirst + '.png'">
-           </div> 
+          </div> 
         <div class="box">
           <p>No.{{yourSecond}}</p>
           <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + yourSecond + '.png'">
@@ -23,7 +23,7 @@
         <div class="title">
             Team R group
         </div>
-       <div class="box">
+        <div class="box">
           <p>No.{{rFirst}}</p>
           <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + rFirst + '.png'">
                 </div> 
@@ -39,8 +39,8 @@
     <img class="team_img" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/da4c8018-fd02-405a-aa3d-9ed90468efed/ddg2er4-1a8dd0ce-9c16-4c8b-8b67-caea38ca0473.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RhNGM4MDE4LWZkMDItNDA1YS1hYTNkLTllZDkwNDY4ZWZlZFwvZGRnMmVyNC0xYThkZDBjZS05YzE2LTRjOGItOGI2Ny1jYWVhMzhjYTA0NzMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.R1O8FP6F_LP7QCy15pv4ks2o9-Rt0bo083-iyk-nUqA">
 </div>
 
- <button @click="count++">Start Battle!</button>
- <p>Count is: {{ count }}</p>
+<button @click="count++">Start Battle!</button>
+<p>Count is: {{ count }}</p>
 </template>
 <script>
 
@@ -71,19 +71,40 @@ export default {
 
 
 </script>
-<style scoped>
-
-.box {
+<style scoped lang="scss">
+.main_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .team_img {
+    height: 30vh;
+    }
+    .group_box { 
+    width: auto;
+    .box, .group_box {
+    border-radius: 32px;
+    box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    .title {
+    background: #ffcc03;
+    border-radius: 32px 32px 0 0;
+    color: #625e2e;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    letter-spacing: 0.2em;
+    padding: 18px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+    }
+    .box {
     width:auto;
+    }
+  }
 }
-.box, .group_box {
-  border-radius: 32px;
-  box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
-  height: auto;
-  margin: 10px;
-  padding: 10px;
-}
-
 button {
   background: #6061c4;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25),
@@ -97,31 +118,5 @@ button {
   font-size: calc(14px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
   color: #fff;
   letter-spacing: 0.19em;
-}
-
-.main_box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.group_box { 
-    width: auto;
-}
-
-.team_img {
-    height: 30vh;
-}
-.title {
-background: #ffcc03;
-  border-radius: 32px 32px 0 0;
-  color: #625e2e;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
-  letter-spacing: 0.2em;
-  padding: 18px;
-  text-transform: capitalize;
-  text-decoration: none;
 }
 </style>

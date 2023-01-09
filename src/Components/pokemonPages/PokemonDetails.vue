@@ -103,7 +103,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 button {
   background: #fff9ef;
   border: none;
@@ -125,7 +125,7 @@ button {
   margin: 7px;
   padding: 3px;
 }
- 
+
 .box, .detail_box {
   margin: 10px;
 }
@@ -167,7 +167,7 @@ button,
 .shiny {
   width: 120px;
 }
-}
+
 
 .detail_box {
   height: auto;
@@ -175,14 +175,15 @@ button,
 
 .detail_box,.search {
   width: 50%;
+}
   .title {
-  background: $color-yellow;
+  background: #ffcc03;
   border-radius: 32px 32px 0 0;
 }
 
 .details,
 .title {
-  color: $color-gold;
+  color: #ffcc03;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
@@ -190,7 +191,7 @@ button,
   text-transform: capitalize;
   text-decoration: none;
 }
-}
+
 
 .details,
 .title,
@@ -210,7 +211,7 @@ button,
   width: 120px;
 }
 .compare {
-  background: $color-yellow;
+  background: #ffcc03;
   display: flex;
   margin: auto;
   margin-bottom: 20px;
@@ -223,13 +224,13 @@ button,
     inset -5px -5px 10px #ffffff;
   border-radius: 32px;
 }
-}
+
 
 .box,
 .compare,
 .detail_box {
   border-radius: 32px;
-  box-shadow: 5px 5px 10px $color-black2, 10px 10px 20px $color-black2;
+  box-shadow: 5px 5px 10px #0000, 10px 10px 20px #0000;
 }
 
 </style>
