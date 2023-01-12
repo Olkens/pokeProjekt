@@ -18,18 +18,19 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .card {
   display: flex;
   flex-direction: column;
   /* justify-content: flex-start; */
   align-items: center;
   gap: 10px;
-}
-.pokemon-name{
+  .pokemon-name{
   font-size: 0.8rem;
   font-weight: bold;
   text-transform: capitalize;
   margin: 0;
 }
+}
+
 </style>
