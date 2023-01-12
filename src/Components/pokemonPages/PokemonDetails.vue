@@ -104,14 +104,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-// button {
-//   background: #fff9ef;
-//   border: none;
-//   border-radius: 40px;
-//   box-shadow: 5px 5px 10px #00000017, 10px 10px 20px #00000017;
-//   height: min-content;
-//   width: min-content;
-// }
+
 
 
 // .box, .detail_box {
@@ -258,6 +251,15 @@ button,
   margin: auto;
   margin-bottom: 20px;
   width: 40%;
+  button {
+  background: #fff9ef;
+  border: none;
+  border-radius: 40px;
+  box-shadow: 5px 5px 10px #00000017, 10px 10px 20px #00000017;
+  height: min-content;
+  width: min-content;
+}
+
   .button {
   margin-top: 12px;
   width: 60px;
@@ -288,10 +290,10 @@ button,
   padding: 18px;
   text-align: left;
 }
-// .box,
-// .compare,
-// .detail_box {
-//   border-radius: 32px;
-//   box-shadow: 5px 5px 10px #0000, 10px 10px 20px #0000;
-// }
+.box,
+.compare,
+.detail_box {
+  border-radius: 32px;
+  // box-shadow: 5px 5px 10px #0000, 10px 10px 20px #0000;
+}
 </style>
