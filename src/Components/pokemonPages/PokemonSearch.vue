@@ -299,7 +299,7 @@ $color-white: #ffffff;
   gap: 25px;
 } 
 }
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 412px) {
   .pokemonSearch {
     max-width: 250px;
   }
