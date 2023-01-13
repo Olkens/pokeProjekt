@@ -134,7 +134,7 @@ export default {};
             .nav-router-link {
               padding: 16px 30px;
               font-size: 15px;
-              letter-spacing: 0.1em;
+              letter-spacing: 0.2em;
               display: flex;
             }
           }
@@ -200,7 +200,7 @@ export default {};
             gap: 20px;
   
             .nav-router-link {
-              padding: 16px 30px;
+              padding: 15px 30px;
               font-size: 12px;
               letter-spacing: 0.1em;
               display: flex;

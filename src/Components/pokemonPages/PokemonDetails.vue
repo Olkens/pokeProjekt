@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main_box">
-      <div>
+      <div class="big-box">
         <div class="box">
           <p>Deafult</p>
           <img class="deafult" :src="pokemonDetails.sprites.front_default" />
@@ -231,5 +231,78 @@ button,
   box-shadow: inset 2px 2px 4px #ffac6099, inset 5px 5px 10px #ffac6080,
     inset -5px -5px 10px #ffffff;
   border-radius: 32px;
+}
+
+
+@media only screen and (max-width: 376px) {
+
+.main_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.big-box {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.detail_box {
+  height: 300px;
+  width: 305px;
+}
+
+.second-box {
+  display: flex;
+  justify-content: center;
+  
+  height: 350px;
+  width: 340px;
+}
+
+.botom_box {
+  width: 340px;
+}
+
+.compare {
+  margin: 5px;
+}
+}
+
+@media only screen and (max-width: 415px) {
+
+.main_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.big-box {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.detail_box {
+  height: 300px;
+  width: 305px;
+}
+
+.second-box {
+  display: flex;
+  justify-content: center;
+  height: 350px;
+  width: 340px;
+}
+
+.botom_box {
+  width: 340px;
+}
+
+.compare {
+  margin: 5px;
+}
 }
 </style>
