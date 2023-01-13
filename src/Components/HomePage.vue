@@ -14,7 +14,5 @@ export default {
 </script>
 
 <style scoped>
-.main-container {
-  min-height: 66vh; /* to jest tylko na chwile */
-}
+
 </style>
