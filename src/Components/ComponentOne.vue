@@ -87,6 +87,7 @@ body {
                     font-size: 26px;
                     padding: 10px;
                 }
+
                 p {
                     line-height: 30px;
                     font-size: 16px;
@@ -96,6 +97,7 @@ body {
         }
     }
 }
+
 @media only screen and (max-width: 541px) {
     body {
         display: flex;
@@ -114,6 +116,7 @@ body {
                     font-size: 30px;
                     padding: 10px;
                 }
+
                 p {
                     line-height: 30px;
                     font-size: 16px;
