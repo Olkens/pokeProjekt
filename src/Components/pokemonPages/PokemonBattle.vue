@@ -6,68 +6,97 @@
           Your group
         </div>
         <div class="box">
-        <p>No.{{yourFirst}}</p>
-          <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + yourFirst + '.png'">
-          </div> 
-        <div class="box">
-          <p>No.{{yourSecond}}</p>
-          <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + yourSecond + '.png'">
-        </div>
-        <div class="box">
-          <p>No.{{yourThird}}</p>
-          <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + yourThird + '.png'">
-        </div>
+        <p>No.{{yourPokemonId}}</p>
+          <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + yourPokemonId + '.png'">
+           </div> 
         </div>
     <img class="team_img" src="https://www.pngall.com/wp-content/uploads/5/Versus-PNG-HD-Image.png">
     <div class="group_box">
         <div class="title">
             Team R group
         </div>
-        <div class="box">
-          <p>No.{{rFirst}}</p>
-          <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + rFirst + '.png'">
+       <div class="box">
+          <p>No.{{rPokemonId}}</p>
+          <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + rPokemonId + '.png'">
                 </div> 
-        <div class="box">
-          <p>No.{{rSecond}}</p>
-          <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + rSecond + '.png'">
-        </div>
-        <div class="box">
-          <p>No.{{rThird}}</p>
-          <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + rThird + '.png'">
-        </div>
     </div>
     <img class="team_img" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/da4c8018-fd02-405a-aa3d-9ed90468efed/ddg2er4-1a8dd0ce-9c16-4c8b-8b67-caea38ca0473.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RhNGM4MDE4LWZkMDItNDA1YS1hYTNkLTllZDkwNDY4ZWZlZFwvZGRnMmVyNC0xYThkZDBjZS05YzE2LTRjOGItOGI2Ny1jYWVhMzhjYTA0NzMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.R1O8FP6F_LP7QCy15pv4ks2o9-Rt0bo083-iyk-nUqA">
 </div>
 
-<button @click="count++">Start Battle!</button>
-<p>Count is: {{ count }}</p>
+ <button @click="fight">Start Battle!</button>
+ <div class="box">{{ battleLog }}</div>
 </template>
 <script>
-
+import axios from 'axios';
 export default {
-  components: {},
+  props: ['pokemon'],
   name: "PokemonBattle",
-  methods : {
-    randomNum: function myFunction(){
-      return ;
-  },
-},
   data() {
     return {
-      pokemonId: 0,
-      pokemonDetails: [],
-      types: [],
-      count: 0,
-      yourFirst: Math.floor(Math.random() * (151 - 1 + 1)) + 1,
-      yourSecond: Math.floor(Math.random() * (151 - 1 + 1)) + 1,
-      yourThird: Math.floor(Math.random() * (151 - 1 + 1)) + 1,
-      rFirst: Math.floor(Math.random() * (151 - 1 + 1)) + 1,
-      rSecond: Math.floor(Math.random() * (151 - 1 + 1)) + 1,
-      rThird: Math.floor(Math.random() * (151 - 1 + 1)) + 1,
+      url: "https://pokeapi.co/api/v2/pokemon?offset=0&limit=151",
+      pokemons: [],
+      yourPokemonId: Math.floor(Math.random() * (151 - 1 + 1)) + 1,
+      rPokemonId: Math.floor(Math.random() * (151 - 1 + 1)) + 1,
+      yourPokemonDetails: {},
+      rPokemonDetails: {},
+      battleLog: '',
     };
   },
-
-};
+  created() {
+      this.loadYourPokemonDetails(this.yourPokemonId);
+      this.loadRPokemonDetails(this.rPokemonId);
+    },
+  methods: {
+    async loadYourPokemonDetails(pokemonId) {
+      this.yourPokemonDetails = {};
+      await axios.get("https://pokeapi.co/api/v2/pokemon/" + pokemonId).then((res) => {
+          this.yourPokemonDetails = res.data;
+          this.yourPokemonId = res.data.id;
+          console.log(this.yourPokemonDetails.stats[1].base_stat + ' ' + this.yourPokemonDetails.stats[0].base_stat)
+        });
+    },
+    async loadRPokemonDetails(pokemonId) {
+      this.rPokemonDetails = {};
+      await axios.get("https://pokeapi.co/api/v2/pokemon/" + pokemonId).then((res) => {
+          this.rPokemonDetails = res.data;
+          this.rPokemonId = res.data.id;
+          console.log(this.rPokemonDetails.stats[1].base_stat + ' ' + this.rPokemonDetails.stats[0].base_stat)
+        });
+    },
+    fight() {
+      let yourPokemonHP = this.yourPokemonDetails.stats[0].base_stat;
+      let rPokemonHP = this.rPokemonDetails.stats[0].base_stat;
+      let yourPokemonAttack = parseInt( this.yourPokemonDetails.stats[1].base_stat);
+      let rPokemonAttack = parseInt( this.rPokemonDetails.stats[1].base_stat);
+      console.log('Your Pokemon Attack is: ' + yourPokemonAttack);
+      console.log('Team Rocket Pokemon Attack is: ' + rPokemonAttack);
+      console.log('Your HP is: ' + yourPokemonHP);
+      console.log('Team Rocket HP is: ' + rPokemonHP);
+       while(rPokemonHP > 0 || yourPokemonHP > 0){
+        if(yourPokemonAttack > rPokemonAttack) {
+          rPokemonHP -= 2;
+        } else {
+          rPokemonHP -= 1;
+        }
+        if (rPokemonAttack > yourPokemonAttack) {
+          yourPokemonHP -= 2;
+        } else {
+          yourPokemonHP -= 1;
+        }
+        console.log('R HP ' + rPokemonHP);
+        console.log('Your HP ' + yourPokemonHP);
+        if (rPokemonHP <= 0 || yourPokemonHP <= 0){
+          break;
+        }
+       }  
+      if (rPokemonHP <= 0) {
+        this.battleLog = "You win! Team Rocket's Blasting Off Again."
+      } else if (yourPokemonHP <= 0){
+        this.battleLog = 'Oh, no! Team go Rocket wins!'
+      }
+      }
+    }
+  }
 
 
 </script>
