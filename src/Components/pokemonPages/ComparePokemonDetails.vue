@@ -1,8 +1,18 @@
 <template>
-    <div>
-        <div class="details" v-if="Object.keys(pokemonDetails).length !== 0"> 
+    <div v-if="Object.keys(pokemonDetails).length !== 0">
+        <div class="box">
+            <p>Deafult</p>
+            <img class="deafult" :src="pokemonDetails.sprites.front_default" />
+        </div>
+        <div class="box">
+            <p>Shiny</p>
+            <img class="shiny" :src="pokemonDetails.sprites.front_shiny" />
+        </div>
+        <div class="details">
+            <div class="title">
+                No.{{ pokemonDetails.id }} {{ pokemonDetails.name }}
+            </div>
             <p>
-                {{ pokemonDetails.name }}
                 Type :
                 <span v-for="(type, index) in types" :key="index">
                     <span v-if="index == types.length - 1">{{ type }}</span>
@@ -36,12 +46,12 @@ export default {
     props: ['pokemon'],
     data() {
         return {
-            pokemonDetails: {}
+            pokemonDetails: {},
+            types: []
         }
     },
     watch: {
         pokemon: function () {
-            console.log(this.pokemon)
             this.fetchPokemon(this.pokemon);
         }
     },
@@ -49,7 +59,10 @@ export default {
         fetchPokemon(pokemon) {
             axios.get("https://pokeapi.co/api/v2/pokemon/" + pokemon).then((res) => {
                 this.pokemonDetails = res.data
-                console.log("done")
+                this.types = []
+                for (let i = 0; i < res.data.types.length; i++) {
+                    this.types.push(res.data.types[i].type.name);
+                }
             })
         }
     }
