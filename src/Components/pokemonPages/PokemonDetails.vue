@@ -258,15 +258,17 @@ button,
   box-shadow: 5px 5px 10px #00000017, 10px 10px 20px #00000017;
   height: min-content;
   width: min-content;
-}
-
   .button {
   margin-top: 12px;
   width: 60px;
+}
   .button-left {
     transform: rotate(180deg);
     }
-  }
+  
+}
+
+  
   .compare {
   background: #ffcc03;
   display: flex;
