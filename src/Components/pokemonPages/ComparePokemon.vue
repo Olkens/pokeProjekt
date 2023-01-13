@@ -1,10 +1,13 @@
 <template>
     <div class="main-container">
-        <v-select :options=pokemons v-model="firstPokemon"></v-select>
-        <ComparePokemonDetails :pokemon="firstPokemon"></ComparePokemonDetails>
-        <ComparePokemonDetails :pokemon="secondPokemon"></ComparePokemonDetails>
-        <v-select :options=pokemons v-model="secondPokemon"></v-select>
-        <button @click="comparePokemons"> dupsko </button>
+        <div class="select-box">
+            <v-select :options=pokemons v-model="firstPokemon" class="select"></v-select>
+            <v-select :options=pokemons v-model="secondPokemon" class="select"></v-select>
+        </div>
+        <div class="pokemon-box">
+            <ComparePokemonDetails :pokemon="firstPokemon"></ComparePokemonDetails>
+            <ComparePokemonDetails :pokemon="secondPokemon"></ComparePokemonDetails>
+        </div>
     </div>
 </template>
 <script>
@@ -20,11 +23,8 @@ export default {
             url: "https://pokeapi.co/api/v2/pokemon?offset=0&limit=151",
             pokemons: [],
             firstPokemon: 'Wybierz pierwszego pokemona',
-            firstPokemonData: {},
             secondPokemon: 'Wybierz drugiego pokemona',
-            secondPokemonData: {},
-            firstPokemonTypes: [],
-            secondPokemonTypes: [],
+
         }
     },
     created() {
@@ -36,36 +36,7 @@ export default {
                     return p.name
                 });
             })
-            .then(() => {
-            });
     },
-    methods: {
-        async getFirstPokemon() {
-            await axios.get("https://pokeapi.co/api/v2/pokemon/" + this.firstPokemon).then((res) => {
-                this.firstPokemonData = res.data
-                for (let i = 0; i < res.data.types.length; i++) {
-                    this.firstPokemonTypes.push(res.data.types[i].type.name);
-                }
-            })
-        },
-        async getSecondPokemon() {
-            await axios.get("https://pokeapi.co/api/v2/pokemon/" + this.secondPokemon).then((res) => {
-                this.secondPokemonData = res.data
-                for (let i = 0; i < res.data.types.length; i++) {
-                    this.secondPokemonTypes.push(res.data.types[i].type.name);
-                }
-            })
-        },
-        async comparePokemons() {
-            console.log("elo")
-            console.log(this.pokemons)
-            if (this.pokemons.includes(this.firstPokemon) && this.pokemons.includes(this.secondPokemon)) {
-                await this.getFirstPokemon()
-                await this.getSecondPokemon()
-                console.log(this.firstPokemonData.name + " " + this.secondPokemonData.name)
-            }
-        }
-    }
 
 }
 </script>
@@ -75,6 +46,20 @@ export default {
 .main-container {
     max-width: 1290px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    .select-box{
+        display: flex;
+        justify-content: center;
+        gap: 45px;
+        .select{
+            max-width: 400px;
+        }
+    }
+    .pokemon-box {
+        display: flex;
+        justify-content: center;
+        gap: 45px;
+    }
 }
 </style>
