@@ -13,8 +13,3 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-.main-container {
-  min-height: 66vh; /* to jest tylko na chwile */
-}
-</style>
