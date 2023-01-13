@@ -100,19 +100,40 @@ export default {
 
 
 </script>
-<style scoped>
-
-.box {
+<style scoped lang="scss">
+.main_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .team_img {
+    height: 30vh;
+    }
+    .group_box { 
+    width: auto;
+    .box, .group_box {
+    border-radius: 32px;
+    box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    .title {
+    background: #ffcc03;
+    border-radius: 32px 32px 0 0;
+    color: #625e2e;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    letter-spacing: 0.2em;
+    padding: 18px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+    }
+    .box {
     width:auto;
+    }
+  }
 }
-.box, .group_box {
-  border-radius: 32px;
-  box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
-  height: auto;
-  margin: 10px;
-  padding: 10px;
-}
-
 button {
   background: #6061c4;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25),
@@ -128,29 +149,103 @@ button {
   letter-spacing: 0.19em;
 }
 
-.main_box {
+@media screen and (max-width: 375px) {
+  .main_box {
     display: flex;
     align-items: center;
     justify-content: center;
+    .team_img {
+    height: 10vh;
+    }
+    .group_box { 
+    width: 50%;
+    .box, .group_box {
+    border-radius: 32px;
+    box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
+    height: auto;
+    margin: 1px;
+    padding: 5px;
+    .title {
+    background: #ffcc03;
+    border-radius: 32px 32px 0 0;
+    color: #625e2e;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    letter-spacing: 0.2em;
+    padding: 18px;
+    text-transform: capitalize;
+    text-decoration: none;
 }
-
-.group_box { 
-    width: auto;
+    }
+    .box {
+    width:auto;
+    }
+  }
 }
-
-.team_img {
-    height: 30vh;
-}
-.title {
-background: #ffcc03;
-  border-radius: 32px 32px 0 0;
-  color: #625e2e;
-  font-family: "Montserrat", sans-serif;
+button {
+  background: #6061c4;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25),
+    10px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 32px;
+  margin: 25px;
+  padding: 16px 60px;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
-  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
-  letter-spacing: 0.2em;
-  padding: 18px;
-  text-transform: capitalize;
   text-decoration: none;
+  font-size: calc(14px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
+  color: #fff;
+  letter-spacing: 0.19em;
+}
+}
+
+@media screen and (max-width: 428px) {
+  .main_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .team_img {
+    height: 10vh;
+    }
+    .group_box { 
+    width: 50%;
+    .box, .group_box {
+    border-radius: 32px;
+    box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
+    height: auto;
+    margin: 1px;
+    padding: 5px;
+    .title {
+    background: #ffcc03;
+    border-radius: 32px 32px 0 0;
+    color: #625e2e;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    letter-spacing: 0.2em;
+    padding: 18px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+    }
+    .box {
+    width:auto;
+    }
+  }
+}
+button {
+  background: #6061c4;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25),
+    10px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 32px;
+  margin: 25px;
+  padding: 16px 60px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  font-size: calc(14px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
+  color: #fff;
+  letter-spacing: 0.19em;
+}
 }
 </style>
