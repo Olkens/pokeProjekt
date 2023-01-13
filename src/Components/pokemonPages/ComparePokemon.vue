@@ -44,7 +44,7 @@ export default {
 @import "vue-select/dist/vue-select.css";
 
 .main-container {
-    max-width: 1290px;
+    max-width: 1920px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,6 +52,7 @@ export default {
         display: flex;
         justify-content: center;
         gap: 45px;
+        border-radius: 10px;
         .select{
             max-width: 400px;
         }

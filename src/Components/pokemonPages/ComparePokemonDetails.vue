@@ -1,5 +1,5 @@
 <template>
-    <div v-if="Object.keys(pokemonDetails).length !== 0">
+    <div class="main_box"  v-if="Object.keys(pokemonDetails).length !== 0">
         <div class="box">
             <p>Deafult</p>
             <img class="deafult" :src="pokemonDetails.sprites.front_default" />
@@ -69,6 +69,56 @@ export default {
 
 }
 </script>
-<style lang="">
-    
+<style lang="scss" scoped>
+    .main_box {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 65%;
+    .box {
+        margin: 7px;
+        padding: 3px;
+        .deafult {
+            width: 150px;
+        }
+        .shiny {
+            width: 120px;
+        }
+    }
+    .detail_box {
+    height: auto;
+    .title {
+        background: #ffcc03;
+        border-radius: 32px 32px 0 0;
+        }
+    }
+    .box,
+    .detail_box {
+        margin: 10px;
+        }
+    }
+    .detail_box,
+    .search {
+        width: 50%;
+    }
+    .details,
+    .title {
+        color: black;
+        font-family: "Montserrat", sans-serif;
+        font-style: normal;
+        font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+        letter-spacing: 0.2em;
+        text-transform: capitalize;
+        text-decoration: none;
+    }
+    .details,
+    .title{
+    padding: 18px;
+    text-align: left;
+    }
+    .box,
+    .detail_box{
+        border-radius: 32px;
+        // box-shadow: 5px 5px 10px #0000, 10px 10px 20px #0000;
+}
 </style>
