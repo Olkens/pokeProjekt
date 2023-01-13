@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main_box">
-      <div>
+      <div class="big-box">
         <div class="box">
           <p>Deafult</p>
           <img class="deafult" :src="pokemonDetails.sprites.front_default" />
@@ -53,10 +53,7 @@
           />
         </button>
       </div>
-      <div class="compare">
-        <p>Compare with :</p>
-        <div class="search"><p>pokemon name</p></div>
-      </div>
+      
       <div v-if="pokemonDetails.id < 151">
         <button @click="loadPokemonDetailsById(pokemonId + 1)" class="arrow">
           <img
@@ -104,9 +101,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-
-
 // .box, .detail_box {
 //   margin: 10px;
 // }
@@ -298,4 +292,72 @@ button,
   border-radius: 32px;
   // box-shadow: 5px 5px 10px #0000, 10px 10px 20px #0000;
 }
+
+
+@media only screen and (max-width: 376px) {
+  .main_box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      .big-box {
+        display: flex;
+        justify-content: center;
+  
+      }
+  
+      .detail_box {
+        height: 300px;
+        width: 305px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 415px) {
+  .main_box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      .big-box {
+        display: flex;
+        justify-content: center;
+  
+      }
+  
+      .detail_box {
+        height: 300px;
+        width: 305px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 541px) {
+  .main_box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      .big-box {
+        display: flex;
+        justify-content: center;
+  
+      }
+  
+      .detail_box {
+        height: 300px;
+        width: 305px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 281px) {
+    .box {
+      width: 110px;
+    }
+    .detail_box {
+      max-width: 240px;
+      height: 320px;
+    }
+  }
 </style>
