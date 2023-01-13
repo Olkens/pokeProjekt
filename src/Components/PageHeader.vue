@@ -35,7 +35,7 @@ export default {};
   flex-direction: column;
   padding-top: 65px;
   padding-bottom: 65px;
-  
+
 
   .logo {
     max-width: 400px;
@@ -74,174 +74,184 @@ export default {};
     }
   }
 }
+
 @media only screen and (max-width: 376px) {
   .main-container {
     display: flex;
     flex-direction: column;
-      .logo {
-        max-width: 300px;
-        max-height: 100px;
-      }
-  
-      header {
-        margin-top: 45px;
-        margin-right: 20px;
-  
-        nav {
-  
-          ul {
+
+    .logo {
+      max-width: 300px;
+      max-height: 100px;
+    }
+
+    header {
+      margin-top: 45px;
+      margin-right: 20px;
+
+      nav {
+
+        ul {
+          display: flex;
+          list-style: none;
+          flex-wrap: wrap;
+          margin-right: 15px;
+
+          gap: 20px;
+
+          .nav-router-link {
+            padding: 12px 20px;
+            font-size: 12px;
+            letter-spacing: 0.1em;
             display: flex;
-            list-style: none;
-            flex-wrap: wrap;
-            margin-right: 15px;
-  
-            gap: 20px;
-  
-            .nav-router-link {
-              padding: 12px 20px;
-              font-size: 12px;
-              letter-spacing: 0.1em;
-              display: flex;
-            }
           }
         }
       }
     }
   }
-  @media only screen and (max-width: 415px) {
+}
+
+@media only screen and (max-width: 415px) {
   .main-container {
     display: flex;
     flex-direction: column;
-      .logo {
-        max-width: 300px;
-        max-height: 100px;
-      }
-  
-      header {
-        margin-top: 45px;
-        margin-right: 20px;
-  
-        nav {
-  
-          ul {
+
+    .logo {
+      max-width: 300px;
+      max-height: 100px;
+    }
+
+    header {
+      margin-top: 45px;
+      margin-right: 20px;
+
+      nav {
+
+        ul {
+          display: flex;
+          list-style: none;
+          flex-wrap: wrap;
+          margin-right: 15px;
+
+          gap: 20px;
+
+          .nav-router-link {
+            padding: 16px 30px;
+            font-size: 15px;
+            letter-spacing: 0.1em;
             display: flex;
-            list-style: none;
-            flex-wrap: wrap;
-            margin-right: 15px;
-  
-            gap: 20px;
-  
-            .nav-router-link {
-              padding: 16px 30px;
-              font-size: 15px;
-              letter-spacing: 0.1em;
-              display: flex;
-            }
           }
         }
       }
     }
   }
-  @media only screen and (max-width: 821px) {
+}
+
+@media only screen and (max-width: 821px) {
   .main-container {
     display: flex;
     flex-direction: column;
-      .logo {
-        max-width: 300px;
-        max-height: 100px;
-      }
-  
-      header {
-        margin-top: 45px;
-        margin-right: 20px;
-  
-        nav {
-  
-          ul {
-            display: flex;
-            list-style: none;
-            flex-wrap: wrap;
-            margin-right: 15px;
-  
-            gap: 20px;
-  
-            .nav-router-link {
-              padding: 19px 40px;
-              font-size: 15px;
-              letter-spacing: 0.19em;
-              display: flex;
-            }
-          }
-        }
-      }
+
+    .logo {
+      max-width: 300px;
+      max-height: 100px;
     }
-  } 
-  @media only screen and (max-width: 541px) {
-  .main-container {
-    display: flex;
-    flex-direction: column;
-      .logo {
-        max-width: 300px;
-        max-height: 100px;
-      }
-  
-      header {
-        margin-top: 45px;
-        margin-right: 20px;
-  
-        nav {
-  
-          ul {
+
+    header {
+      margin-top: 45px;
+      margin-right: 20px;
+
+      nav {
+
+        ul {
+          display: flex;
+          list-style: none;
+          flex-wrap: wrap;
+          margin-right: 15px;
+
+          gap: 20px;
+
+          .nav-router-link {
+            padding: 19px 40px;
+            font-size: 15px;
+            letter-spacing: 0.19em;
             display: flex;
-            list-style: none;
-            flex-wrap: wrap;
-            margin-right: 15px;
-  
-            gap: 20px;
-  
-            .nav-router-link {
-              padding: 16px 30px;
-              font-size: 12px;
-              letter-spacing: 0.1em;
-              display: flex;
-            }
-          }
-        }
-      }
-    }
-  } 
-  @media only screen and (max-width: 281px) {
-  .main-container {
-    display: flex;
-    flex-direction: column;
-      .logo {
-        max-width: 200px;
-        max-height: 100px;
-      }
-  
-      header {
-        margin-top: 45px;
-        margin-right: 20px;
-  
-        nav {
-  
-          ul {
-            display: flex;
-            list-style: none;
-            flex-wrap: wrap;
-            margin-right: 15px;
-  
-            gap: 20px;
-  
-            .nav-router-link {
-              padding: 13px 20px;
-              font-size: 12px;
-              letter-spacing: 0.1em;
-              display: flex;
-            }
           }
         }
       }
     }
   }
+}
+
+@media only screen and (max-width: 541px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+      max-width: 300px;
+      max-height: 100px;
+    }
+
+    header {
+      margin-top: 45px;
+      margin-right: 20px;
+
+      nav {
+
+        ul {
+          display: flex;
+          list-style: none;
+          flex-wrap: wrap;
+          margin-right: 15px;
+
+          gap: 20px;
+
+          .nav-router-link {
+            padding: 16px 30px;
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 281px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+      max-width: 200px;
+      max-height: 100px;
+    }
+
+    header {
+      margin-top: 45px;
+      margin-right: 20px;
+
+      nav {
+
+        ul {
+          display: flex;
+          list-style: none;
+          flex-wrap: wrap;
+          margin-right: 15px;
+
+          gap: 20px;
+
+          .nav-router-link {
+            padding: 13px 20px;
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
 </style>
