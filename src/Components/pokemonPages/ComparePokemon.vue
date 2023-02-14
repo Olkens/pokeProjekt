@@ -4,8 +4,8 @@
         <ComparePokemonDetails :pokemon="firstPokemon"></ComparePokemonDetails>
         <ComparePokemonDetails :pokemon="secondPokemon"></ComparePokemonDetails>
         <v-select :options=pokemons v-model="secondPokemon"></v-select>
-        <button @click="comparePokemons"> dupsko </button>
     </div>
+
 </template>
 <script>
 import axios from 'axios';
@@ -57,7 +57,6 @@ export default {
             })
         },
         async comparePokemons() {
-            console.log("elo")
             console.log(this.pokemons)
             if (this.pokemons.includes(this.firstPokemon) && this.pokemons.includes(this.secondPokemon)) {
                 await this.getFirstPokemon()
