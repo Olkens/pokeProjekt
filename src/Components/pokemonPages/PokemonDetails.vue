@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main_box">
-      <div>
+      <div class="big-box">
         <div class="box">
           <p>Deafult</p>
           <img class="deafult" :src="pokemonDetails.sprites.front_default" />
@@ -46,23 +46,16 @@
     </div>
     <div class="botom_box">
       <div v-if="pokemonDetails.id > 1">
-        <button @click="loadPokemonDetailsById(pokemonId - 1)"  class="arrow">
-          <img
-            class="button button-left"
-            src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png"
-          />
+        <button @click="loadPokemonDetailsById(pokemonId - 1)" class="arrow">
+          <img class="button button-left"
+            src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png" />
         </button>
       </div>
-      <div class="compare">
-        <p>Compare with :</p>
-        <div class="search"><p>pokemon name</p></div>
-      </div>
+
       <div v-if="pokemonDetails.id < 151">
         <button @click="loadPokemonDetailsById(pokemonId + 1)" class="arrow">
-          <img
-            class="button button-right"
-            src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png"
-          />
+          <img class="button button-right"
+            src="https://www.freeiconspng.com/thumbs/arrow-icon/arrow-icon--myiconfinder-23.png" />
         </button>
       </div>
     </div>
@@ -92,45 +85,55 @@ export default {
       this.pokemonDetails = [];
       this.types = [];
       await axios.get("https://pokeapi.co/api/v2/pokemon/" + pokemonId).then((res) => {
-          this.pokemonDetails = res.data;
-          this.pokemonId = res.data.id;
-          for (let i = 0; i < res.data.types.length; i++) {
-            this.types.push(res.data.types[i].type.name);
-          }
-        });
+        this.pokemonDetails = res.data;
+        this.pokemonId = res.data.id;
+        for (let i = 0; i < res.data.types.length; i++) {
+          this.types.push(res.data.types[i].type.name);
+        }
+      });
     },
   },
 };
 </script>
 
 <style scoped lang="scss">
-.main_box{
+
+.main_box {
   display: flex;
   justify-content: center;
   margin: auto;
   width: 65%;
-  .box{
+
+  .box {
     margin: 7px;
     padding: 3px;
-    .deafult{
+
+    .deafult {
       width: 150px;
     }
-    .shiny{
+
+    .shiny {
       width: 120px;
     }
   }
-  .detail_box{
+
+  .detail_box {
     height: auto;
-    .title{
+
+    .title {
       background: #ffcc03;
       border-radius: 32px 32px 0 0;
     }
   }
-  .box, .detail_box {
-  margin: 10px;
+
+  .box,
+  .detail_box {
+    margin: 10px;
+  }
 }
-}
-.detail_box,.search {
+
+.detail_box,
+.search {
   width: 50%;
 }
 
@@ -145,10 +148,10 @@ export default {
   text-decoration: none;
 }
 
-button, 
+button,
 .box,
 .detail_box,
-.detail_box  {
+.detail_box {
   background: #fff9ef;
 }
 
@@ -159,20 +162,20 @@ button,
   box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
 }
 
-.botom_box{
+.botom_box {
   display: flex;
   justify-content: center;
   margin: auto;
   margin-bottom: 20px;
   width: 40%;
+
   button {
-  background: #fff9ef;
-  border: none;
-  border-radius: 40px;
-  box-shadow: 5px 5px 10px #00000017, 10px 10px 20px #00000017;
-  height: min-content;
-  width: min-content;
-}
+    background: #fff9ef;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 5px 5px 10px #00000017, 10px 10px 20px #00000017;
+    height: min-content;
+    width: min-content;
 
   .button {
   margin-top: 12px;
@@ -183,19 +186,20 @@ button,
     }
   
   .compare {
-  background: #ffcc03;
-  display: flex;
-  margin: auto;
-  margin-bottom: 20px;
-  justify-content: center;
-  width: 60%;
-  .search {
-    background: #fff9ef;
-    box-shadow: inset 2px 2px 4px #ffac6099, inset 5px 5px 10px #ffac6080,
-    inset -5px -5px 10px #ffffff;
-    border-radius: 32px;
+    background: #ffcc03;
+    display: flex;
+    margin: auto;
+    margin-bottom: 20px;
+    justify-content: center;
+    width: 60%;
+
+    .search {
+      background: #fff9ef;
+      box-shadow: inset 2px 2px 4px #ffac6099, inset 5px 5px 10px #ffac6080,
+        inset -5px -5px 10px #ffffff;
+      border-radius: 32px;
     }
-    
+
   }
 }
 
@@ -205,10 +209,80 @@ button,
   padding: 18px;
   text-align: left;
 }
+
 .box,
 .compare,
 .detail_box {
   border-radius: 32px;
   // box-shadow: 5px 5px 10px #0000, 10px 10px 20px #0000;
+}
+
+
+@media only screen and (max-width: 376px) {
+  .main_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .big-box {
+      display: flex;
+      justify-content: center;
+
+    }
+
+    .detail_box {
+      height: 300px;
+      width: 305px;
+    }
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .main_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .big-box {
+      display: flex;
+      justify-content: center;
+
+    }
+
+    .detail_box {
+      height: 300px;
+      width: 305px;
+    }
+  }
+}
+
+@media only screen and (max-width: 541px) {
+  .main_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .big-box {
+      display: flex;
+      justify-content: center;
+
+    }
+
+    .detail_box {
+      height: 300px;
+      width: 305px;
+    }
+  }
+}
+
+@media only screen and (max-width: 281px) {
+  .box {
+    width: 110px;
+  }
+
+  .detail_box {
+    max-width: 240px;
+    height: 320px;
+  }
 }
 </style>

@@ -19,7 +19,7 @@ body {
     .footer-container {
         display: flex;
         align-items: flex-end;
-        
+
         .footer {
             width: 100%;
             height: 129px;
@@ -43,19 +43,4 @@ body {
         }
     }
 }
-
-
-@media only screen and (max-width: 375px) {
-    .footer {
-        height: 70px;
-        
-    }
-    .groupName {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 0;
-    }
-    
-}
-
 </style>

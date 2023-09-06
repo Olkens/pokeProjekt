@@ -20,11 +20,8 @@ export default {
             url: "https://pokeapi.co/api/v2/pokemon?offset=0&limit=151",
             pokemons: [],
             firstPokemon: 'Wybierz pierwszego pokemona',
-            firstPokemonData: {},
             secondPokemon: 'Wybierz drugiego pokemona',
-            secondPokemonData: {},
-            firstPokemonTypes: [],
-            secondPokemonTypes: [],
+
         }
     },
     created() {
@@ -36,8 +33,6 @@ export default {
                     return p.name
                 });
             })
-            .then(() => {
-            });
     },
     methods: {
         async getFirstPokemon() {
@@ -66,14 +61,30 @@ export default {
         }
     }
 
+
 }
 </script>
 <style lang="scss" scoped>
 @import "vue-select/dist/vue-select.css";
 
 .main-container {
-    max-width: 1290px;
+    max-width: 1920px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    .select-box{
+        display: flex;
+        justify-content: center;
+        gap: 45px;
+        border-radius: 10px;
+        .select{
+            max-width: 400px;
+        }
+    }
+    .pokemon-box {
+        display: flex;
+        justify-content: center;
+        gap: 45px;
+    }
 }
 </style>
