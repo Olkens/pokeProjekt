@@ -97,88 +97,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-// .box, .detail_box {
-//   margin: 10px;
-// }
-// button, 
-// .box,
-// .detail_box,
-// .detail_box  {
-//   background: #fff9ef;
-// }
-
-// .box,
-// .compare,
-// .detail_box {
-//   border-radius: 32px;
-//   box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
-// }
-
-// .button {
-//   margin-top: 12px;
-//   width: 60px;
-// }
-
-// .button-left {
-//   transform: rotate(180deg);
-// }
-
-// .compare {
-//   background: #ffcc03;
-//   display: flex;
-//   margin: auto;
-//   margin-bottom: 20px;
-//   justify-content: center;
-//   width: 60%;
-// }
-
-// .detail_box,.search {
-//   width: 50%;
-// }
-//   .title {
-//   background: #ffcc03;
-//   border-radius: 32px 32px 0 0;
-// }
-
-// .details,
-// .title {
-//   color: #ffcc03;
-//   font-family: "Montserrat", sans-serif;
-//   font-style: normal;
-//   font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
-//   letter-spacing: 0.2em;
-//   text-transform: capitalize;
-//   text-decoration: none;
-// }
-
-
-// .details,
-// .title,
-// .compare {
-//   padding: 18px;
-//   text-align: left;
-// }
-
-// .compare {
-//   background: #ffcc03;
-//   display: flex;
-//   margin: auto;
-//   margin-bottom: 20px;
-//   justify-content: center;
-//   width: 60%;
-// }
-// .search {
-//   background: #fff9ef;
-//   box-shadow: inset 2px 2px 4px #ffac6099, inset 5px 5px 10px #ffac6080,
-//     inset -5px -5px 10px #ffffff;
-//   border-radius: 32px;
-// }
-// .box,
-// .compare,
-// .detail_box {
-//   border-radius: 32px;
-//   box-shadow: 5px 5px 10px #0000, 10px 10px 20px #0000;
-// }
 
 .main_box {
   display: flex;
@@ -259,18 +177,14 @@ button,
     height: min-content;
     width: min-content;
 
-    .button {
-      margin-top: 12px;
-      width: 60px;
+  .button {
+  margin-top: 12px;
+  width: 60px;
+}
+  .button-left {
+    transform: rotate(180deg);
     }
-
-    .button-left {
-      transform: rotate(180deg);
-    }
-
-  }
-
-
+  
   .compare {
     background: #ffcc03;
     display: flex;

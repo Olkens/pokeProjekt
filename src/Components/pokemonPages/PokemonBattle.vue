@@ -24,8 +24,9 @@
 </div>
 
  <button @click="fight">Start Battle!</button>
- <div class="box">{{ battleLog }}</div>
+ <div class="box" v-if="battleLog != ''">{{ battleLog }}</div>
 </template>
+
 <script>
 import axios from 'axios';
 export default {
@@ -129,9 +130,6 @@ export default {
     text-decoration: none;
 }
     }
-    .box {
-    width:auto;
-    }
   }
 }
 button {
@@ -148,6 +146,14 @@ button {
   color: #fff;
   letter-spacing: 0.19em;
 }
+.box {
+    width:auto;
+    border-radius: 32px;
+    box-shadow: 5px 5px 10px #00000040, 10px 10px 20px #00000040;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    }
 
 @media screen and (max-width: 375px) {
   .main_box {
@@ -182,20 +188,6 @@ button {
     width:auto;
     }
   }
-}
-button {
-  background: #6061c4;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25),
-    10px 10px 20px rgba(0, 0, 0, 0.25);
-  border-radius: 32px;
-  margin: 25px;
-  padding: 16px 60px;
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  text-decoration: none;
-  font-size: calc(14px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
-  color: #fff;
-  letter-spacing: 0.19em;
 }
 }
 
